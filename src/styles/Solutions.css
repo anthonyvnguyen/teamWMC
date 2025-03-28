@@ -1,0 +1,310 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.solution-hero {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.solution-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.security-hero {
+    background-image: linear-gradient(
+        to right,
+        rgba(36, 94, 138, 0.1),
+        rgba(36, 94, 138, 0.3)
+    );
+}
+
+.networking-hero {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.2)
+    );
+}
+
+.solution-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.solution-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.solution-hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+}
+
+/* Solution Details */
+.solution-details {
+    padding: 80px 20px;
+}
+
+.solution-details-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.solution-overview h2,
+.solution-offerings h2,
+.solution-benefits h2,
+.security-approach h2,
+.networking-technologies h2,
+.solution-cta h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.solution-overview h2::after,
+.solution-offerings h2::after,
+.solution-benefits h2::after,
+.security-approach h2::after,
+.networking-technologies h2::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #245e8a;
+}
+
+.solution-overview p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+/* Offerings Grid */
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.offering-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.offering-card h3 {
+    font-size: 24px;
+    color: #245e8a;
+    margin-bottom: 16px;
+}
+
+.offering-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Benefits Section */
+.benefits-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.benefits-list li {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 24px;
+    border-left: 4px solid #245e8a;
+}
+
+.benefits-list h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.benefits-list p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Security Approach */
+.approach-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.approach-step {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #245e8a;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto 16px;
+}
+
+.approach-step h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* Networking Technologies */
+.technologies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.technology-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    transition: transform 0.3s ease;
+}
+
+.technology-item:hover {
+    transform: translateY(-5px);
+}
+
+.technology-item h4 {
+    font-size: 20px;
+    color: #245e8a;
+    margin-bottom: 12px;
+}
+
+.technology-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* CTA Section */
+.solution-cta {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 48px;
+    border-radius: 12px;
+}
+
+.solution-cta h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.solution-cta p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 32px;
+}
+
+.solution-cta .btn {
+    font-size: 18px;
+    padding: 14px 32px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .solution-hero h1 {
+        font-size: 36px;
+    }
+
+    .solution-hero p {
+        font-size: 18px;
+    }
+
+    .solution-overview h2,
+    .solution-offerings h2,
+    .solution-benefits h2,
+    .security-approach h2,
+    .networking-technologies h2,
+    .solution-cta h2 {
+        font-size: 28px;
+    }
+
+    .benefits-list,
+    .approach-steps,
+    .technologies-list {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-cta {
+        padding: 32px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .solution-hero {
+        padding: 60px 20px;
+    }
+
+    .solution-hero h1 {
+        font-size: 28px;
+    }
+
+    .solution-details {
+        padding: 40px 20px;
+    }
+
+    .solution-details-container {
+        gap: 40px;
+    }
+
+    .offerings-grid {
+        grid-template-columns: 1fr;
+    }
+}

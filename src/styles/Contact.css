@@ -1,0 +1,236 @@
+.contact-hero {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    background-image: linear-gradient(
+        to right,
+        rgba(36, 94, 138, 0.05),
+        rgba(36, 94, 138, 0.2)
+    );
+}
+
+.contact-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.contact-hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.contact-section {
+    padding: 80px 20px;
+}
+
+.contact-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 64px;
+}
+
+/* Contact Info */
+.contact-info {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #333;
+    position: relative;
+}
+
+.contact-info h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #245e8a;
+}
+
+.contact-info > p {
+    margin-bottom: 32px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-methods {
+    margin-bottom: 32px;
+}
+
+.contact-method {
+    margin-bottom: 24px;
+}
+
+.contact-method h3,
+.business-hours h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #245e8a;
+}
+
+.contact-method p,
+.business-hours p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+}
+
+.contact-form-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #333;
+    position: relative;
+}
+
+.contact-form-container h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #245e8a;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group:nth-last-child(2),
+.form-group:last-child {
+    grid-column: span 2;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #245e8a;
+    outline: none;
+}
+
+.contact-form button {
+    grid-column: span 2;
+    justify-self: start;
+    padding: 14px 32px;
+    font-size: 16px;
+}
+
+/* Form Success */
+.form-success {
+    background-color: #eaf7ea;
+    border-left: 4px solid #4caf50;
+    padding: 24px;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.form-success h3 {
+    font-size: 20px;
+    color: #2e7d32;
+    margin-bottom: 8px;
+}
+
+.form-success p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        order: 2;
+    }
+
+    .contact-form-container {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero h1 {
+        font-size: 36px;
+    }
+
+    .contact-hero p {
+        font-size: 18px;
+    }
+
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group:nth-last-child(2) {
+        grid-column: span 1;
+    }
+
+    .form-group:last-child {
+        grid-column: span 1;
+    }
+
+    .contact-form button {
+        grid-column: span 1;
+        width: 100%;
+    }
+}

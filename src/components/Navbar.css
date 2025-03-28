@@ -1,0 +1,176 @@
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.wmc-logo {
+    height: 50px;
+    width: auto;
+}
+
+.sba-logo {
+    height: 40px;
+    width: auto;
+    margin-left: 16px;
+}
+
+.navbar-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    margin: 0;
+    color: #000;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #245e8a;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.dropdown-toggle:hover {
+    color: #245e8a;
+}
+
+.dropdown-arrow {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 12px 0;
+    margin-top: 12px;
+    z-index: 1000;
+    list-style: none;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+    color: #245e8a;
+}
+
+.contact-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .dropdown-menu li a {
+        padding-left: 0;
+        text-align: center;
+    }
+}
