@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "../styles/Solutions.css";
 
 const CyberSecurity = () => {
@@ -165,52 +166,7 @@ const CyberSecurity = () => {
                 </section>
             </main>
 
-            <footer className="footer">
-                <div className="footer-container">
-                    <div className="footer-logo">
-                        <img
-                            src={require("../assets/images/wmc_logo.png")}
-                            alt="Team WMC Logo"
-                        />
-                        <p>Team WMC</p>
-                    </div>
-                    <div className="footer-links">
-                        <div className="footer-column">
-                            <h4>Solutions</h4>
-                            <ul>
-                                <li>
-                                    <Link to="/cloud">Cloud</Link>
-                                </li>
-                                <li>
-                                    <Link to="/security">Cyber Security</Link>
-                                </li>
-                                <li>
-                                    <Link to="/networking">Networking</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="footer-column">
-                            <h4>Company</h4>
-                            <ul>
-                                <li>
-                                    <Link to="/about">About Us</Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact">Contact</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>Email: info@teamwmc.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </div>
-                </div>
-                <div className="footer-bottom">
-                    <p>© 2023 Team WMC. All rights reserved.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

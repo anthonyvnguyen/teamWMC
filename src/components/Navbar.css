@@ -173,4 +173,9 @@
         padding-left: 0;
         text-align: center;
     }
+    
+}
+
+.no-underline {
+    text-decoration: none;
 }

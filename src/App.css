@@ -105,12 +105,13 @@ body {
     transform: translateY(-2px);
 }
 
-/* Services Section */
-.services-section {
+/* Featured Solutions Section */
+.featured-solutions-section {
     padding: 80px 20px;
+    background-color: #fff;
 }
 
-.services-container {
+.featured-solutions-container {
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -120,6 +121,7 @@ body {
     font-weight: 700;
     margin-bottom: 48px;
     position: relative;
+    text-align: center;
 }
 
 .section-title::after {
@@ -133,47 +135,281 @@ body {
     background-color: #245e8a;
 }
 
-.services-grid {
+.solutions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
 }
 
-.service-card {
+.solution-tile {
     background-color: #fff;
     padding: 32px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding-bottom: 70px;
+    overflow: hidden;
 }
 
-.service-card h3 {
+.solution-tile .learn-more-link {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #245e8a;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.3s ease;
+    text-decoration: none;
+}
+
+.solution-tile:hover .learn-more-link {
+    bottom: 20px;
+}
+
+.solution-tile .learn-more-link span {
+    font-size: 20px;
+    margin: 0;
+}
+
+.solution-tile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.solution-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cloud-icon {
+    background-color: #6e9fbf;
+}
+
+.security-icon {
+    background-color: #2d2d2d;
+}
+
+.network-icon {
+    background-color: #1a1a1a;
+}
+
+.solution-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.solution-tile h3 {
     font-size: 24px;
     color: #245e8a;
+    margin-bottom: 12px;
 }
 
-.service-card p {
+.solution-tile p {
     flex: 1;
-    margin-bottom: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
-/* About Section */
-.about-section {
+.learn-more-link {
+    color: #245e8a;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover {
+    transform: translateX(5px);
+}
+
+.arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover .arrow {
+    transform: translateX(3px);
+}
+
+/* Why Us Section */
+.why-us-section {
     padding: 80px 20px;
     background-color: #f9f9f9;
 }
 
-.about-container {
-    max-width: 800px;
+.why-us-container {
+    max-width: 1280px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
 }
 
-.about-description {
+.why-us-text {
+    text-align: left;
+}
+
+.why-us-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #333;
+    position: relative;
+}
+
+.why-us-text h2::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #245e8a;
+}
+
+.why-us-text p {
     font-size: 18px;
-    line-height: 1.8;
+    color: #555;
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+.check-mark {
+    color: #245e8a;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.why-us-image {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    background-image: linear-gradient(
+        45deg,
+        #d0d0d0 25%,
+        #e0e0e0 25%,
+        #e0e0e0 50%,
+        #d0d0d0 50%,
+        #d0d0d0 75%,
+        #e0e0e0 75%,
+        #e0e0e0 100%
+    );
+    background-size: 20px 20px;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 60px 20px;
+    background-color: #245e8a;
+    color: #fff;
+}
+
+.stats-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-item h3 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.stat-item p {
+    font-size: 24px;
+    opacity: 0.9;
+}
+
+.stat-item:not(:first-child) {
+    border-left: 2px solid white;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    background-image: linear-gradient(
+        to right,
+        rgba(36, 94, 138, 0.05),
+        rgba(36, 94, 138, 0.2)
+    );
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-container h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cta-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-container .btn {
+    font-size: 18px;
+    padding: 16px 32px;
 }
 
 /* Footer */
@@ -282,6 +518,19 @@ body {
 
 /* Media Queries */
 @media (max-width: 992px) {
+    .why-us-container {
+        grid-template-columns: 1fr;
+    }
+
+    .why-us-text {
+        order: 1;
+    }
+
+    .why-us-image {
+        order: 0;
+        min-height: 300px;
+    }
+
     .footer-container {
         grid-template-columns: 1fr 1fr;
     }
@@ -297,8 +546,12 @@ body {
         font-size: 36px;
     }
 
-    .services-grid {
+    .solutions-grid {
         grid-template-columns: 1fr;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-container {
@@ -319,5 +572,13 @@ body {
 
     .btn {
         width: 100%;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-container h2 {
+        font-size: 28px;
     }
 }

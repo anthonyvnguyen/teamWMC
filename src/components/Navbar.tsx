@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import wmcLogo from "../assets/images/wmc_logo.png";
+import wmcLogo from "../assets/images/wmc_logo_black.png";
 import sbaLogo from "../assets/images/sba_logo.png";
 
 const Navbar: React.FC = () => {
@@ -14,15 +14,21 @@ const Navbar: React.FC = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <div className="navbar-logos">
-                    <img
-                        src={wmcLogo}
-                        alt="Team WMC Logo"
-                        className="wmc-logo"
-                    />
-                    <h1 className="navbar-title">Team WMC</h1>
-                    <img src={sbaLogo} alt="SBA Logo" className="sba-logo" />
-                </div>
+                <Link to="/" className="no-underline">
+                    <div className="navbar-logos">
+                        <img
+                            src={wmcLogo}
+                            alt="Team WMC Logo"
+                            className="wmc-logo"
+                        />
+                        <h1 className="navbar-title">Team WMC</h1>
+                        <img
+                            src={sbaLogo}
+                            alt="SBA Logo"
+                            className="sba-logo"
+                        />
+                    </div>
+                </Link>
                 <div className="navbar-items">
                     <ul className="navbar-links">
                         <li className="dropdown">

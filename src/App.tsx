@@ -2,8 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import TestimonialsCarousel from "./components/TestimonialsCarousel";
+import Footer from "./components/Footer";
 
 function App() {
+    // Array of testimonial IDs to display
+    const testimonialIds = [1, 2, 3, 4, 5, 6];
+
     return (
         <div className="App">
             <Navbar />
@@ -33,115 +38,206 @@ function App() {
                     </div>
                 </section>
 
-                <section className="services-section">
-                    <div className="services-container">
-                        <h2 className="section-title">Our Services</h2>
-                        <div className="services-grid">
-                            <div className="service-card">
+                <section className="featured-solutions-section">
+                    <div className="featured-solutions-container">
+                        <h2 className="section-title">
+                            Empowering Secure Digital Transformation
+                        </h2>
+                        <div className="solutions-grid">
+                            <div className="solution-tile">
+                                <div className="solution-icon cloud-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                                    </svg>
+                                </div>
                                 <h3>Cloud Solutions</h3>
                                 <p>
-                                    We provide comprehensive cloud services to
-                                    help businesses migrate, manage, and
-                                    optimize their cloud infrastructure.
+                                    Scalable and secure infrastructure. Optimize
+                                    performance, reduce costs, and maximize
+                                    flexibility with our cloud solutions.
                                 </p>
-                                <Link to="/cloud" className="btn outline-btn">
-                                    Learn More
+                                <Link to="/cloud" className="learn-more-link">
+                                    <span className="arrow">→</span>
                                 </Link>
                             </div>
-                            <div className="service-card">
+                            <div className="solution-tile">
+                                <div className="solution-icon security-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
                                 <h3>Cyber Security</h3>
                                 <p>
-                                    Our cyber security solutions protect your
-                                    data and systems from threats with advanced
-                                    security measures and continuous monitoring.
+                                    Protect your systems and data. Comprehensive
+                                    security services to defend against evolving
+                                    threats and vulnerabilities.
                                 </p>
                                 <Link
                                     to="/security"
-                                    className="btn outline-btn"
+                                    className="learn-more-link"
                                 >
-                                    Learn More
+                                    <span className="arrow">→</span>
                                 </Link>
                             </div>
-                            <div className="service-card">
+                            <div className="solution-tile">
+                                <div className="solution-icon network-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <rect
+                                            x="2"
+                                            y="2"
+                                            width="20"
+                                            height="8"
+                                            rx="2"
+                                            ry="2"
+                                        ></rect>
+                                        <rect
+                                            x="2"
+                                            y="14"
+                                            width="20"
+                                            height="8"
+                                            rx="2"
+                                            ry="2"
+                                        ></rect>
+                                        <line
+                                            x1="6"
+                                            y1="6"
+                                            x2="6.01"
+                                            y2="6"
+                                        ></line>
+                                        <line
+                                            x1="6"
+                                            y1="18"
+                                            x2="6.01"
+                                            y2="18"
+                                        ></line>
+                                    </svg>
+                                </div>
                                 <h3>Networking</h3>
                                 <p>
-                                    We offer end-to-end networking solutions
-                                    from design and implementation to management
-                                    and optimization.
+                                    Reliable, high-performance networks. Expert
+                                    design and implementation for seamless
+                                    connectivity and collaboration.
                                 </p>
                                 <Link
                                     to="/networking"
-                                    className="btn outline-btn"
+                                    className="learn-more-link"
                                 >
-                                    Learn More
+                                    <span className="arrow">→</span>
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="about-section">
-                    <div className="about-container">
-                        <h2 className="section-title">About Us</h2>
-                        <p className="about-description">
-                            Team WMC is a leading IT solutions provider
-                            dedicated to helping businesses navigate the digital
-                            landscape. With our expertise in cloud solutions,
-                            cyber security, and networking, we empower
-                            organizations to achieve their digital
-                            transformation goals while ensuring secure and
-                            efficient operations.
+                <section className="why-us-section">
+                    <div className="why-us-container">
+                        <div className="why-us-text">
+                            <h2>Why Choose Team WMC?</h2>
+                            <p>
+                                We deliver tailored solutions with exceptional
+                                service and cutting-edge expertise. Our team
+                                brings deep technical knowledge and a
+                                client-focused approach to every project.
+                            </p>
+                            <ul className="benefits-list">
+                                <li>
+                                    <span className="check-mark">✓</span>
+                                    Expert consultants with industry
+                                    certifications
+                                </li>
+                                <li>
+                                    <span className="check-mark">✓</span>
+                                    Customized solutions for your specific needs
+                                </li>
+                                <li>
+                                    <span className="check-mark">✓</span>
+                                    Comprehensive support and reliable service
+                                </li>
+                                <li>
+                                    <span className="check-mark">✓</span>
+                                    Proven track record of successful
+                                    deployments
+                                </li>
+                            </ul>
+                            <Link to="/about" className="btn outline-btn">
+                                About Us
+                            </Link>
+                        </div>
+                        <div className="why-us-image">
+                            <div className="image-placeholder"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="stats-section">
+                    <div className="stats-container">
+                        <div className="stat-item">
+                            <h3>X+</h3>
+                            <p>Successful Security Implementations</p>
+                        </div>
+                        <div className="stat-item">
+                            <h3>X+</h3>
+                            <p>Certified Experts</p>
+                        </div>
+                        <div className="stat-item">
+                            <h3>X+</h3>
+                            <p>Successful Cloud Implementations</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Use the updated TestimonialsCarousel component with IDs */}
+                <TestimonialsCarousel
+                    testimonialIds={testimonialIds}
+                    title="A Trusted Partner in Security: Our Customer Success Stories"
+                />
+
+                <section className="cta-section">
+                    <div className="cta-container">
+                        <h2>Ready to Transform Your Digital Infrastructure?</h2>
+                        <p>
+                            Contact us today to discuss how our solutions can
+                            help your business succeed.
                         </p>
+                        <Link to="/contact" className="btn primary-btn">
+                            Get Started
+                        </Link>
                     </div>
                 </section>
             </main>
 
-            <footer className="footer">
-                <div className="footer-container">
-                    <div className="footer-logo">
-                        <img
-                            src={require("./assets/images/wmc_logo.png")}
-                            alt="Team WMC Logo"
-                        />
-                        <p>Team WMC</p>
-                    </div>
-                    <div className="footer-links">
-                        <div className="footer-column">
-                            <h4>Solutions</h4>
-                            <ul>
-                                <li>
-                                    <Link to="/cloud">Cloud</Link>
-                                </li>
-                                <li>
-                                    <Link to="/security">Cyber Security</Link>
-                                </li>
-                                <li>
-                                    <Link to="/networking">Networking</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="footer-column">
-                            <h4>Company</h4>
-                            <ul>
-                                <li>
-                                    <Link to="/about">About Us</Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact">Contact</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>Email: info@teamwmc.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </div>
-                </div>
-                <div className="footer-bottom">
-                    <p>© 2023 Team WMC. All rights reserved.</p>
-                </div>
-            </footer>
+            {/* Use the new Footer component */}
+            <Footer />
         </div>
     );
 }
