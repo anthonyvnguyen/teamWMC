@@ -10,6 +10,11 @@ const Networking = () => {
     // Define testimonial IDs related to networking for the carousel
     const testimonialIds = [1, 4, 6];
 
+    // Function to scroll to top when navigating
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="page-container">
             <Navbar />
@@ -30,10 +35,18 @@ const Networking = () => {
                                 networks to power your business operations
                             </p>
                             <div className="hero-buttons">
-                                <Link to="/contact" className="btn primary-btn">
+                                <Link
+                                    to="/contact"
+                                    className="btn primary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Get Started
                                 </Link>
-                                <Link to="/about" className="btn secondary-btn">
+                                <Link
+                                    to="/about"
+                                    className="btn secondary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Learn More
                                 </Link>
                             </div>
@@ -513,7 +526,11 @@ const Networking = () => {
                                 your business objectives.
                             </p>
                             <div className="networking-contact-buttons">
-                                <Link to="/contact" className="btn primary-btn">
+                                <Link
+                                    to="/contact"
+                                    className="btn primary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Contact Us
                                 </Link>
                                 <Link
@@ -523,6 +540,7 @@ const Networking = () => {
                                         background: "rgba(255,255,255,0.1)",
                                         color: "#fff",
                                     }}
+                                    onClick={scrollToTop}
                                 >
                                     Learn More
                                 </Link>

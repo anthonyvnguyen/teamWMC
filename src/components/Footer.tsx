@@ -4,6 +4,11 @@ import "./Footer.css";
 import wmcLogo from "../assets/images/wmc_logo_white.png";
 
 const Footer: React.FC = () => {
+    // Function to scroll to top when navigating
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -20,13 +25,19 @@ const Footer: React.FC = () => {
                         <h4>Solutions</h4>
                         <ul>
                             <li>
-                                <Link to="/cloud">Cloud</Link>
+                                <Link to="/cloud" onClick={scrollToTop}>
+                                    Cloud
+                                </Link>
                             </li>
                             <li>
-                                <Link to="/security">Cyber Security</Link>
+                                <Link to="/security" onClick={scrollToTop}>
+                                    Cyber Security
+                                </Link>
                             </li>
                             <li>
-                                <Link to="/networking">Networking</Link>
+                                <Link to="/networking" onClick={scrollToTop}>
+                                    Networking
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -34,10 +45,14 @@ const Footer: React.FC = () => {
                         <h4>Company</h4>
                         <ul>
                             <li>
-                                <Link to="/about">About Us</Link>
+                                <Link to="/about" onClick={scrollToTop}>
+                                    About Us
+                                </Link>
                             </li>
                             <li>
-                                <Link to="/contact">Contact</Link>
+                                <Link to="/contact" onClick={scrollToTop}>
+                                    Contact
+                                </Link>
                             </li>
                         </ul>
                     </div>

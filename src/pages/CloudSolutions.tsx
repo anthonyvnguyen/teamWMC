@@ -10,6 +10,11 @@ const CloudSolutions = () => {
     // Define testimonial IDs to be displayed in the carousel
     const testimonialIds = [1, 2, 3, 4, 5, 6];
 
+    // Function to scroll to top when navigating
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="page-container">
             <Navbar />
@@ -27,10 +32,18 @@ const CloudSolutions = () => {
                                 Solutions for Your Business
                             </p>
                             <div className="hero-buttons">
-                                <Link to="/contact" className="btn primary-btn">
+                                <Link
+                                    to="/contact"
+                                    className="btn primary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Get Started
                                 </Link>
-                                <Link to="/about" className="btn secondary-btn">
+                                <Link
+                                    to="/about"
+                                    className="btn secondary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Learn More
                                 </Link>
                             </div>
@@ -481,7 +494,11 @@ const CloudSolutions = () => {
                                 for your business.
                             </p>
                             <div className="cloud-contact-buttons">
-                                <Link to="/contact" className="btn primary-btn">
+                                <Link
+                                    to="/contact"
+                                    className="btn primary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Contact Us
                                 </Link>
                                 <Link
@@ -491,6 +508,7 @@ const CloudSolutions = () => {
                                         background: "rgba(255,255,255,0.1)",
                                         color: "#fff",
                                     }}
+                                    onClick={scrollToTop}
                                 >
                                     Learn More
                                 </Link>

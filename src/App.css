@@ -44,6 +44,14 @@ body {
     color: #245e8a;
 }
 
+.purple-highlight {
+    color: #4a2c6b;
+}
+
+.green-highlight {
+    color: #2c764a;
+}
+
 .hero-description {
     font-size: 20px;
     max-width: 600px;
@@ -301,17 +309,31 @@ body {
     line-height: 1.7;
 }
 
-.benefits-list {
+.why-us-section .benefits-list {
     list-style: none;
-    margin-bottom: 32px;
+    margin: 24px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.benefits-list li {
+.why-us-section .benefits-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    font-size: 16px;
-    color: #333;
+    margin-bottom: 0px;
+    align-items: flex-start;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.why-us-section .benefits-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-color: #e8e8e8;
+    cursor: default;
 }
 
 .check-mark {

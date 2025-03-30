@@ -5,9 +5,15 @@ import Navbar from "./components/Navbar";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import Footer from "./components/Footer";
 import wmcLogo from "./assets/images/wmc_logo_black.png";
+
 function App() {
     // Array of testimonial IDs to display
     const testimonialIds = [1, 2, 3, 4, 5, 6];
+
+    // Function to scroll to top when navigating
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     return (
         <div className="App">
@@ -28,10 +34,18 @@ function App() {
                             and networking solutions.
                         </p>
                         <div className="hero-buttons">
-                            <Link to="/cloud" className="btn primary-btn">
+                            <Link
+                                to="/cloud"
+                                className="btn primary-btn"
+                                onClick={scrollToTop}
+                            >
                                 Our Solutions
                             </Link>
-                            <Link to="/contact" className="btn secondary-btn">
+                            <Link
+                                to="/contact"
+                                className="btn secondary-btn"
+                                onClick={scrollToTop}
+                            >
                                 Contact Us
                             </Link>
                         </div>
@@ -66,7 +80,11 @@ function App() {
                                     performance, reduce costs, and maximize
                                     flexibility with our cloud solutions.
                                 </p>
-                                <Link to="/cloud" className="learn-more-link">
+                                <Link
+                                    to="/cloud"
+                                    className="learn-more-link"
+                                    onClick={scrollToTop}
+                                >
                                     <span className="arrow">→</span>
                                 </Link>
                             </div>
@@ -95,6 +113,7 @@ function App() {
                                 <Link
                                     to="/security"
                                     className="learn-more-link"
+                                    onClick={scrollToTop}
                                 >
                                     <span className="arrow">→</span>
                                 </Link>
@@ -151,6 +170,7 @@ function App() {
                                 <Link
                                     to="/networking"
                                     className="learn-more-link"
+                                    onClick={scrollToTop}
                                 >
                                     <span className="arrow">→</span>
                                 </Link>
@@ -189,7 +209,11 @@ function App() {
                                     deployments
                                 </li>
                             </ul>
-                            <Link to="/about" className="btn outline-btn">
+                            <Link
+                                to="/about"
+                                className="btn outline-btn"
+                                onClick={scrollToTop}
+                            >
                                 About Us
                             </Link>
                         </div>
@@ -235,7 +259,11 @@ function App() {
                             Contact us today to discuss how our solutions can
                             help your business succeed.
                         </p>
-                        <Link to="/contact" className="btn primary-btn">
+                        <Link
+                            to="/contact"
+                            className="btn primary-btn"
+                            onClick={scrollToTop}
+                        >
                             Get Started
                         </Link>
                     </div>

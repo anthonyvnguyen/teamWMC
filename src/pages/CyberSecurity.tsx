@@ -10,6 +10,11 @@ const CyberSecurity = () => {
     // Define testimonial IDs related to security for the carousel
     const testimonialIds = [2, 3, 5];
 
+    // Function to scroll to top when navigating
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="page-container">
             <Navbar />
@@ -30,10 +35,18 @@ const CyberSecurity = () => {
                                 cyber threats with enterprise-grade security
                             </p>
                             <div className="hero-buttons">
-                                <Link to="/contact" className="btn primary-btn">
+                                <Link
+                                    to="/contact"
+                                    className="btn primary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Get Started
                                 </Link>
-                                <Link to="/about" className="btn secondary-btn">
+                                <Link
+                                    to="/about"
+                                    className="btn secondary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Learn More
                                 </Link>
                             </div>
@@ -409,7 +422,11 @@ const CyberSecurity = () => {
                                 evolving cyber threats and vulnerabilities.
                             </p>
                             <div className="cyber-contact-buttons">
-                                <Link to="/contact" className="btn primary-btn">
+                                <Link
+                                    to="/contact"
+                                    className="btn primary-btn"
+                                    onClick={scrollToTop}
+                                >
                                     Contact Us
                                 </Link>
                                 <Link
@@ -419,6 +436,7 @@ const CyberSecurity = () => {
                                         background: "rgba(255,255,255,0.1)",
                                         color: "#fff",
                                     }}
+                                    onClick={scrollToTop}
                                 >
                                     Learn More
                                 </Link>

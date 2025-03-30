@@ -35,15 +35,20 @@ const Navbar: React.FC = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
-    const closeMobileMenu = () => {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
+    const closeMobileMenuAndScrollToTop = () => {
         setMobileMenuOpen(false);
         setDropdownOpen(false);
+        scrollToTop();
     };
 
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <Link to="/" className="no-underline">
+                <Link to="/" className="no-underline" onClick={scrollToTop}>
                     <div className="navbar-logos">
                         <img
                             src={wmcLogo}
@@ -97,14 +102,17 @@ const Navbar: React.FC = () => {
                                 }`}
                             >
                                 <li>
-                                    <Link to="/cloud" onClick={closeMobileMenu}>
+                                    <Link
+                                        to="/cloud"
+                                        onClick={closeMobileMenuAndScrollToTop}
+                                    >
                                         Cloud Solutions
                                     </Link>
                                 </li>
                                 <li>
                                     <Link
                                         to="/security"
-                                        onClick={closeMobileMenu}
+                                        onClick={closeMobileMenuAndScrollToTop}
                                     >
                                         Cyber Security
                                     </Link>
@@ -112,7 +120,7 @@ const Navbar: React.FC = () => {
                                 <li>
                                     <Link
                                         to="/networking"
-                                        onClick={closeMobileMenu}
+                                        onClick={closeMobileMenuAndScrollToTop}
                                     >
                                         Networking
                                     </Link>
@@ -120,17 +128,23 @@ const Navbar: React.FC = () => {
                             </ul>
                         </li>
                         <li>
-                            <Link to="/insights" onClick={closeMobileMenu}>
+                            <Link
+                                to="/insights"
+                                onClick={closeMobileMenuAndScrollToTop}
+                            >
                                 Insights
                             </Link>
                         </li>
                         <li>
-                            <Link to="/about" onClick={closeMobileMenu}>
+                            <Link
+                                to="/about"
+                                onClick={closeMobileMenuAndScrollToTop}
+                            >
                                 About Us
                             </Link>
                         </li>
                     </ul>
-                    <Link to="/contact" onClick={closeMobileMenu}>
+                    <Link to="/contact" onClick={closeMobileMenuAndScrollToTop}>
                         <button className="contact-btn">Contact Us</button>
                     </Link>
                 </div>

@@ -21,6 +21,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
     const trackRef = useRef<HTMLDivElement>(null);
+    const autoRotateRef = useRef<NodeJS.Timeout | null>(null);
 
     // Get the actual testimonials from IDs
     const testimonials = testimonialIds
@@ -32,6 +33,32 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
     // If we have same or fewer testimonials than visible cards, just show them directly
     const shouldLoop = testimonials.length > visibleCards;
+
+    // Auto-rotate functionality
+    useEffect(() => {
+        const startAutoRotation = () => {
+            if (testimonials.length <= 1) return; // Don't auto-rotate if only one testimonial
+
+            if (autoRotateRef.current) {
+                clearInterval(autoRotateRef.current);
+            }
+
+            autoRotateRef.current = setInterval(() => {
+                if (!animating) {
+                    goToNext();
+                }
+            }, 6000); // Rotate every 6 seconds
+        };
+
+        startAutoRotation();
+
+        // Clear interval on component unmount
+        return () => {
+            if (autoRotateRef.current) {
+                clearInterval(autoRotateRef.current);
+            }
+        };
+    }, [animating, testimonials.length]);
 
     // For infinite looping, create an array with duplicated items at both ends
     // Add items at the beginning and end for a smooth infinite loop
@@ -164,6 +191,16 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         if (animating || testimonials.length <= 1) return;
         setAnimating(true);
 
+        // Reset auto-rotation timer on manual navigation
+        if (autoRotateRef.current) {
+            clearInterval(autoRotateRef.current);
+            autoRotateRef.current = setInterval(() => {
+                if (!animating) {
+                    goToNext();
+                }
+            }, 6000);
+        }
+
         setCurrentIndex((prevIndex) => prevIndex - 1);
         setTimeout(() => setAnimating(false), 500);
     };
@@ -171,6 +208,16 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     const goToNext = () => {
         if (animating || testimonials.length <= 1) return;
         setAnimating(true);
+
+        // Reset auto-rotation timer on manual navigation
+        if (autoRotateRef.current) {
+            clearInterval(autoRotateRef.current);
+            autoRotateRef.current = setInterval(() => {
+                if (!animating) {
+                    goToNext();
+                }
+            }, 6000);
+        }
 
         setCurrentIndex((prevIndex) => prevIndex + 1);
         setTimeout(() => setAnimating(false), 500);

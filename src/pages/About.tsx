@@ -11,6 +11,11 @@ import gditImage from "../assets/images/gdit.jpg";
 import contactBgImage from "../assets/images/contact_bg.jpg";
 
 const About = () => {
+    // Function to scroll to top when navigating
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="page-container">
             <Navbar />
@@ -119,7 +124,11 @@ const About = () => {
                             change, ensuring they remain secure, efficient, and
                             competitive.
                         </p>
-                        <Link to="/contact" className="btn primary-btn">
+                        <Link
+                            to="/contact"
+                            className="btn primary-btn"
+                            onClick={scrollToTop}
+                        >
                             Contact Us
                         </Link>
                     </div>
