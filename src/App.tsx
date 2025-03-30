@@ -4,7 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import Footer from "./components/Footer";
-
+import wmcLogo from "./assets/images/wmc_logo_black.png";
 function App() {
     // Array of testimonial IDs to display
     const testimonialIds = [1, 2, 3, 4, 5, 6];
@@ -194,7 +194,13 @@ function App() {
                             </Link>
                         </div>
                         <div className="why-us-image">
-                            <div className="image-placeholder"></div>
+                            <div className="logo-container">
+                                <img
+                                    src={wmcLogo}
+                                    alt="Team WMC Logo"
+                                    className="wmc-logo-large"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>

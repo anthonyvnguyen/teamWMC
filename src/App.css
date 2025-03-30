@@ -172,6 +172,7 @@ body {
     justify-content: center;
     transition: bottom 0.3s ease;
     text-decoration: none;
+    z-index: 1;
 }
 
 .solution-tile:hover .learn-more-link {
@@ -181,6 +182,11 @@ body {
 .solution-tile .learn-more-link span {
     font-size: 20px;
     margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.solution-tile .learn-more-link:hover span {
+    transform: rotate(45deg);
 }
 
 .solution-tile:hover {
@@ -235,11 +241,11 @@ body {
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .learn-more-link:hover {
-    transform: translateX(5px);
+    color: #1a4c75;
 }
 
 .arrow {
@@ -318,25 +324,51 @@ body {
 .why-us-image {
     width: 100%;
     height: 100%;
-    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.image-placeholder {
+.why-us-image .logo-container {
     width: 100%;
-    height: 100%;
-    background-color: #e0e0e0;
-    border-radius: 12px;
-    background-image: linear-gradient(
-        45deg,
-        #d0d0d0 25%,
-        #e0e0e0 25%,
-        #e0e0e0 50%,
-        #d0d0d0 50%,
-        #d0d0d0 75%,
-        #e0e0e0 75%,
-        #e0e0e0 100%
-    );
-    background-size: 20px 20px;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+.why-us-image img.wmc-logo-large {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.why-us-image img.wmc-logo-large:hover {
+    transform: translateY(-5px);
+}
+
+/* Media queries for the logo in why-us section */
+@media (max-width: 992px) {
+    .why-us-image {
+        min-height: 200px;
+    }
+
+    .why-us-image img.wmc-logo-large {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-us-image img.wmc-logo-large {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-us-image img.wmc-logo-large {
+        max-width: 250px;
+    }
 }
 
 /* Stats Section */
