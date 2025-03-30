@@ -30,7 +30,6 @@ const Contact = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically send the form data to your backend or email service
         console.log("Form submitted:", formData);
         setFormSubmitted(true);
 
@@ -53,6 +52,7 @@ const Contact = () => {
             <Navbar />
 
             <main>
+                {/* Hero Section */}
                 <section className="contact-hero">
                     <div className="contact-hero-container">
                         <h1>Contact Us</h1>
@@ -63,8 +63,10 @@ const Contact = () => {
                     </div>
                 </section>
 
+                {/* Contact Section */}
                 <section className="contact-section">
                     <div className="contact-container">
+                        {/* Left Column: Contact Info */}
                         <div className="contact-info">
                             <h2>Get In Touch</h2>
                             <p>
@@ -102,6 +104,7 @@ const Contact = () => {
                             </div>
                         </div>
 
+                        {/* Right Column: Contact Form */}
                         <div className="contact-form-container">
                             <h2>Send Us a Message</h2>
                             {formSubmitted ? (
@@ -113,12 +116,9 @@ const Contact = () => {
                                     </p>
                                 </div>
                             ) : (
-                                <form
-                                    className="contact-form"
-                                    onSubmit={handleSubmit}
-                                >
+                                <form onSubmit={handleSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="name">Full Name*</label>
+                                        <label htmlFor="name">Name *</label>
                                         <input
                                             type="text"
                                             id="name"
@@ -130,9 +130,7 @@ const Contact = () => {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="email">
-                                            Email Address*
-                                        </label>
+                                        <label htmlFor="email">Email *</label>
                                         <input
                                             type="email"
                                             id="email"
@@ -144,9 +142,7 @@ const Contact = () => {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="phone">
-                                            Phone Number
-                                        </label>
+                                        <label htmlFor="phone">Phone</label>
                                         <input
                                             type="tel"
                                             id="phone"
@@ -157,9 +153,7 @@ const Contact = () => {
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="company">
-                                            Company Name
-                                        </label>
+                                        <label htmlFor="company">Company</label>
                                         <input
                                             type="text"
                                             id="company"
@@ -171,7 +165,7 @@ const Contact = () => {
 
                                     <div className="form-group">
                                         <label htmlFor="service">
-                                            Service of Interest*
+                                            Service *
                                         </label>
                                         <select
                                             id="service"
@@ -183,36 +177,36 @@ const Contact = () => {
                                             <option value="general">
                                                 General Inquiry
                                             </option>
-                                            <option value="cloud">
-                                                Cloud Solutions
+                                            <option value="web-dev">
+                                                Web Development
                                             </option>
-                                            <option value="security">
-                                                Cyber Security
+                                            <option value="app-dev">
+                                                Application Development
                                             </option>
-                                            <option value="networking">
-                                                Networking
+                                            <option value="support">
+                                                Technical Support
+                                            </option>
+                                            <option value="consultation">
+                                                IT Consultation
                                             </option>
                                         </select>
                                     </div>
 
                                     <div className="form-group">
                                         <label htmlFor="message">
-                                            Message*
+                                            Message *
                                         </label>
                                         <textarea
                                             id="message"
                                             name="message"
+                                            rows={5}
                                             value={formData.message}
                                             onChange={handleChange}
-                                            rows={5}
                                             required
                                         ></textarea>
                                     </div>
 
-                                    <button
-                                        type="submit"
-                                        className="btn primary-btn"
-                                    >
+                                    <button type="submit" className="btn">
                                         Submit
                                     </button>
                                 </form>
