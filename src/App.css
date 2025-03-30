@@ -408,6 +408,27 @@ body {
     gap: 32px;
 }
 
+.stats-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.stats-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+}
+
 .stat-item {
     text-align: center;
     padding: 20px;
@@ -420,7 +441,7 @@ body {
 }
 
 .stat-item p {
-    font-size: 24px;
+    font-size: 18px;
     opacity: 0.9;
 }
 

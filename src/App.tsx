@@ -230,6 +230,7 @@ function App() {
                 </section>
 
                 <section className="stats-section">
+                    <h2>Meet Team WMC</h2>
                     <div className="stats-container">
                         <div className="stat-item">
                             <h3>X+</h3>
