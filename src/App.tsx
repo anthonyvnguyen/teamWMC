@@ -215,12 +215,12 @@ function App() {
                         </div>
                     </div>
                 </section>
-
-                {/* Use the updated TestimonialsCarousel component with IDs */}
-                <TestimonialsCarousel
-                    testimonialIds={testimonialIds}
-                    title="A Trusted Partner in Security: Our Customer Success Stories"
-                />
+                <section className="testimonials-section">
+                    <TestimonialsCarousel
+                        testimonialIds={testimonialIds}
+                        title="A Trusted Partner in Security: Our Customer Success Stories"
+                    />
+                </section>
 
                 <section className="cta-section">
                     <div className="cta-container">
@@ -236,7 +236,6 @@ function App() {
                 </section>
             </main>
 
-            {/* Use the new Footer component */}
             <Footer />
         </div>
     );

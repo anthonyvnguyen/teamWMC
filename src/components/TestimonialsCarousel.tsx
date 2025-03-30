@@ -7,12 +7,16 @@ import {
 
 interface TestimonialsCarouselProps {
     testimonialIds: number[];
-    title: string;
+    title?: string;
+    className?: string;
+    visibleCards?: 1 | 2 | 3; // New prop to control the number of cards displayed
 }
 
 const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     testimonialIds,
     title,
+    className = "",
+    visibleCards = 2, // Default to 2 cards for backward compatibility
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
@@ -23,24 +27,22 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         .map((id) => allTestimonials.find((t) => t.id === id))
         .filter((t): t is Testimonial => t !== undefined);
 
-    // Always show 2 cards in the center with partial views of adjacent cards
-    const visibleCards = 2;
     const cardSpacing = 16; // px
     const cardWidth = 240; // px - fixed width for each card
 
-    // If we have 2 or fewer testimonials, just show them directly
-    const shouldLoop = testimonials.length > 2;
+    // If we have same or fewer testimonials than visible cards, just show them directly
+    const shouldLoop = testimonials.length > visibleCards;
 
     // For infinite looping, create an array with duplicated items at both ends
-    // Add the last 1 item at the beginning and the first 1 item at the end
+    // Add items at the beginning and end for a smooth infinite loop
     const wrappedTestimonials = shouldLoop
         ? [
               // Add last items at the beginning for looping back
-              ...testimonials.slice(-2),
+              ...testimonials.slice(-visibleCards),
               // Original array
               ...testimonials,
               // Add first items at the end for looping forward
-              ...testimonials.slice(0, 2),
+              ...testimonials.slice(0, visibleCards),
           ]
         : testimonials;
 
@@ -50,7 +52,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     // Adjust initial position for the loop
     useEffect(() => {
         if (shouldLoop && trackRef.current) {
-            // Start at the "real" first slide, which is offset by 2 due to the duplicated items
+            // Start at the "real" first slide, which is offset by visibleCards due to the duplicated items
             setCurrentIndex(0);
             // Position at first real item (after the duplicated ones)
             trackRef.current.style.transition = "none";
@@ -64,7 +66,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                 }
             }, 50);
         }
-    }, [shouldLoop]);
+    }, [shouldLoop, visibleCards]);
 
     // Function to calculate and update track position
     const updateTrackPosition = (index: number) => {
@@ -80,8 +82,8 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                     ? testimonials.length + index
                     : index % testimonials.length;
 
-            // Account for the duplicate cards at the beginning (2 cards)
-            const baseOffset = 2 * offsetPerCard;
+            // Account for the duplicate cards at the beginning (visibleCards cards)
+            const baseOffset = visibleCards * offsetPerCard;
 
             // Position the track to show the correct cards
             // Use the original index for smooth animation between edges
@@ -185,13 +187,8 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
         // For the looped version with proper wrapping
         return wrappedTestimonials.map((_, i) => {
-            // We need to show:
-            // 1. The current and next card as active (main visible ones)
-            // 2. The adjacent cards as partial peek
-            // For the edge case (last item showing), we need to ensure first item is peeking
-
             // Adjust index to account for the duplicated items at beginning
-            const adjustedIndex = i - 2;
+            const adjustedIndex = i - visibleCards;
 
             // Calculate the real index in the original array for proper wrapping
             const wrappedIndex =
@@ -205,15 +202,15 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                     ? testimonials.length + currentIndex
                     : currentIndex % testimonials.length;
 
-            // Calculate the next visible index with wrapping
-            const nextVisibleIndex =
-                (wrappedCurrentIndex + 1) % testimonials.length;
-
-            // Make the card active if it's one of the visible ones
-            return (
-                wrappedIndex === wrappedCurrentIndex ||
-                wrappedIndex === nextVisibleIndex
-            );
+            // Now check if this card should be active based on its position within the visible range
+            for (let j = 0; j < visibleCards; j++) {
+                const activeIndex =
+                    (wrappedCurrentIndex + j) % testimonials.length;
+                if (wrappedIndex === activeIndex) {
+                    return true;
+                }
+            }
+            return false;
         });
     };
 
@@ -229,141 +226,175 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     // Pre-render all cards by making them visible but with opacity and blur effects
     // This will ensure all cards are in the DOM and ready to be shown
     const getCardVisibility = (index: number) => {
-        // All cards should be visible in DOM but with different styles
+        // For multi-card displays or single-card, use a consistent approach
         const isActive = activeIndices[index];
 
-        // Adjacent cards should be partially visible (for peek effect)
-        const isPeeking =
-            shouldLoop &&
-            (index === 0 || // First duplicated card
-                index === 1 || // Second duplicated card
-                index === wrappedTestimonials.length - 2 || // Second-to-last duplicated card
-                index === wrappedTestimonials.length - 1); // Last duplicated card
+        if (isActive) {
+            return "active";
+        }
 
-        if (isActive) return "active";
-        if (isPeeking) return "peeking";
+        // For multi-card displays, handle peeking cards
+        if (visibleCards > 1) {
+            const isPeeking = shouldLoop;
+
+            if (isPeeking) {
+                // Peeking only applies to immediate adjacent cards
+                const adjustedIndex = index - visibleCards;
+                const wrappedIndex =
+                    adjustedIndex < 0
+                        ? testimonials.length + adjustedIndex
+                        : adjustedIndex % testimonials.length;
+
+                const wrappedCurrentIndex =
+                    currentIndex < 0
+                        ? testimonials.length + currentIndex
+                        : currentIndex % testimonials.length;
+
+                // Check if this is immediately before or after the visible range
+                const isBefore =
+                    wrappedIndex ===
+                    (wrappedCurrentIndex - 1 + testimonials.length) %
+                        testimonials.length;
+                const isAfter =
+                    wrappedIndex ===
+                    (wrappedCurrentIndex + visibleCards) % testimonials.length;
+
+                if (isBefore || isAfter) {
+                    return "peeking";
+                }
+            }
+        }
+
         return "";
     };
 
-    return (
-        <div className="testimonials-section">
-            <div className="testimonials-container">
-                <h2 className="section-title">{title}</h2>
-                <div className="testimonials-carousel">
-                    <button
-                        className="carousel-btn prev-btn"
-                        onClick={goToPrev}
-                        disabled={animating || testimonials.length <= 1}
-                        aria-label="Previous testimonials"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
+    // Add specific classes for carousel width based on visible cards
+    const carouselSizeClass = `cards-${visibleCards}`;
 
-                    <div className="testimonials-viewport">
-                        <div
-                            className="testimonials-track"
-                            ref={trackRef}
-                            style={{
-                                paddingLeft: "calc(50% - 240px - 16px)",
-                                transition: "transform 0.5s ease-in-out",
-                            }}
-                        >
-                            {wrappedTestimonials.map((testimonial, index) => (
-                                <div
-                                    className={`testimonial-card ${getCardVisibility(
-                                        index
-                                    )}`}
-                                    key={`${testimonial.id}-${index}`}
-                                >
-                                    <div className="card-image-container">
-                                        <div className="card-image">
-                                            {testimonial.imageUrl && (
-                                                <img
-                                                    src={testimonial.imageUrl}
-                                                    alt={testimonial.title}
-                                                />
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="card-content">
-                                        <h3 className="card-title">
-                                            {testimonial.title}
-                                        </h3>
-                                        <div className="tech-badges">
-                                            {testimonial.technologies.map(
-                                                (tech, techIndex) => (
-                                                    <span
-                                                        className="badge"
-                                                        key={techIndex}
-                                                    >
-                                                        {tech}
-                                                    </span>
-                                                )
-                                            )}
-                                        </div>
-                                        <p>{testimonial.quote}</p>
-                                        <div className="testimonial-author">
-                                            <h4>{testimonial.author.name}</h4>
-                                            <p>{testimonial.author.title}</p>
-                                        </div>
+    return (
+        <div className={`testimonials-container ${className}`}>
+            {title && <h2 className="section-title">{title}</h2>}
+            <div className={`testimonials-carousel ${carouselSizeClass}`}>
+                <button
+                    className="carousel-btn prev-btn"
+                    onClick={goToPrev}
+                    disabled={animating || testimonials.length <= 1}
+                    aria-label="Previous testimonials"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div className="testimonials-viewport">
+                    <div
+                        className="testimonials-track"
+                        ref={trackRef}
+                        style={{
+                            paddingLeft:
+                                visibleCards === 1
+                                    ? `calc(50% - ${
+                                          cardWidth / 2
+                                      }px - ${cardSpacing}px)`
+                                    : `calc(50% - ${
+                                          (cardWidth * visibleCards) / 2
+                                      }px - ${cardSpacing}px)`,
+                            transition: "transform 0.5s ease-in-out",
+                        }}
+                    >
+                        {wrappedTestimonials.map((testimonial, index) => (
+                            <div
+                                className={`testimonial-card ${getCardVisibility(
+                                    index
+                                )}`}
+                                key={`${testimonial.id}-${index}`}
+                            >
+                                <div className="card-image-container">
+                                    <div className="card-image">
+                                        {testimonial.imageUrl && (
+                                            <img
+                                                src={testimonial.imageUrl}
+                                                alt={testimonial.title}
+                                            />
+                                        )}
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <button
-                        className="carousel-btn next-btn"
-                        onClick={goToNext}
-                        disabled={animating || testimonials.length <= 1}
-                        aria-label="Next testimonials"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
-                </div>
-
-                <div className="carousel-indicators">
-                    {testimonials.length > 1 &&
-                        Array.from({ length: testimonials.length }, (_, i) => (
-                            <button
-                                key={i}
-                                className={`indicator ${
-                                    i ===
-                                    (currentIndex < 0
-                                        ? testimonials.length + currentIndex
-                                        : currentIndex % testimonials.length)
-                                        ? "active"
-                                        : ""
-                                }`}
-                                onClick={() => setCurrentIndex(i)}
-                                aria-label={`Go to slide ${i + 1}`}
-                            />
+                                <div className="card-content">
+                                    <h3 className="card-title">
+                                        {testimonial.title}
+                                    </h3>
+                                    <div className="tech-badges">
+                                        {testimonial.technologies.map(
+                                            (tech, techIndex) => (
+                                                <span
+                                                    className="badge"
+                                                    key={techIndex}
+                                                >
+                                                    {tech}
+                                                </span>
+                                            )
+                                        )}
+                                    </div>
+                                    <p>{testimonial.quote}</p>
+                                    <div className="testimonial-author">
+                                        <h4>{testimonial.author.name}</h4>
+                                        <p>{testimonial.author.title}</p>
+                                    </div>
+                                </div>
+                            </div>
                         ))}
+                    </div>
                 </div>
+
+                <button
+                    className="carousel-btn next-btn"
+                    onClick={goToNext}
+                    disabled={animating || testimonials.length <= 1}
+                    aria-label="Next testimonials"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div className="carousel-indicators">
+                {testimonials.length > 1 &&
+                    Array.from({ length: testimonials.length }, (_, i) => (
+                        <button
+                            key={i}
+                            className={`indicator ${
+                                i ===
+                                (currentIndex < 0
+                                    ? testimonials.length + currentIndex
+                                    : currentIndex % testimonials.length)
+                                    ? "active"
+                                    : ""
+                            }`}
+                            onClick={() => setCurrentIndex(i)}
+                            aria-label={`Go to slide ${i + 1}`}
+                        />
+                    ))}
             </div>
         </div>
     );

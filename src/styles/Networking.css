@@ -1,0 +1,499 @@
+/* Networking styles */
+
+/* Hero Section */
+.networking-hero {
+    background-color: #f9f9f9;
+    background-image: linear-gradient(
+        to right,
+        rgba(44, 118, 74, 0.05),
+        rgba(44, 118, 74, 0.1)
+    );
+    padding: 80px 20px;
+    position: relative;
+}
+
+.networking-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.networking-hero-content {
+    max-width: 600px;
+}
+
+.networking-hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.networking-hero-content p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.networking-hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
+.networking-hero-image svg {
+    width: 150px;
+    height: 150px;
+    color: #2c764a;
+}
+
+/* Networking Services Section */
+.networking-services {
+    background: linear-gradient(to bottom right, #c8e0d8, #2c764a);
+    padding: 80px 20px;
+    color: #fff;
+}
+
+.networking-services-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.networking-services-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.networking-services-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.networking-services-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.networking-services-header p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.networking-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: #fff;
+}
+
+.service-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.service-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Success Stories Section */
+.networking-success {
+    padding: 80px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.networking-success-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.networking-success-content {
+    flex: 0 1 400px;
+    min-width: 300px;
+}
+
+.networking-success-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    position: relative;
+}
+
+.networking-success-content h2::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #2c764a;
+}
+
+.networking-success-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 28px;
+}
+
+/* Custom styling for testimonials carousel in success section */
+.success-carousel {
+    flex: 1;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+.success-carousel .testimonials-carousel {
+    margin-top: 0;
+}
+
+.success-carousel .testimonials-container {
+    padding-top: 0;
+}
+
+/* Custom styles for the networking-testimonials class */
+.networking-testimonials {
+    width: 100%;
+}
+
+.networking-testimonials .testimonial-card {
+    margin: 0 16px;
+}
+
+/* Technologies Section */
+.networking-tech {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f9f9f9, #f2f2f2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.networking-tech-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.networking-tech-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.networking-tech-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.networking-tech-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #2c764a;
+}
+
+.networking-tech-header p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.networking-tech-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid #2c764a !important;
+}
+
+.networking-tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.networking-tech-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    color: #2c764a !important;
+}
+
+.networking-tech-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2c764a !important;
+}
+
+.tech-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Benefits Section */
+.networking-benefits {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.networking-benefits-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.networking-benefits-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.networking-benefits-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.networking-benefits-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #2c764a;
+}
+
+.networking-benefits-header p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: 30px;
+}
+
+.networking-benefit-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #2c764a !important;
+}
+
+.networking-benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.networking-benefit-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #2c764a !important;
+}
+
+.networking-benefit-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Contact Section */
+.networking-contact {
+    padding: 80px 20px;
+    background: linear-gradient(
+            to right,
+            rgba(44, 118, 74, 0.9),
+            rgba(40, 42, 51, 0.8)
+        ),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="rgba(22, 59, 37, 0.1)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.networking-contact-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.networking-contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.networking-contact-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.networking-contact-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.networking-contact-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .networking-hero-container,
+    .networking-success-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .networking-hero-content,
+    .networking-success-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .networking-success-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .networking-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .networking-hero-content p {
+        font-size: 18px;
+    }
+
+    .networking-services-header h2,
+    .networking-tech-header h2,
+    .networking-benefits-header h2,
+    .networking-success-content h2,
+    .networking-contact-content h2 {
+        font-size: 30px;
+    }
+
+    .networking-services-header p,
+    .networking-tech-header p,
+    .networking-benefits-header p,
+    .networking-success-content p,
+    .networking-contact-content p {
+        font-size: 16px;
+    }
+
+    .service-card,
+    .networking-tech-card,
+    .networking-benefit-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .networking-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .networking-hero-content p {
+        font-size: 16px;
+    }
+
+    .networking-services,
+    .networking-tech,
+    .networking-benefits,
+    .networking-success,
+    .networking-contact {
+        padding: 60px 20px;
+    }
+
+    .networking-services-grid,
+    .tech-grid,
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+}

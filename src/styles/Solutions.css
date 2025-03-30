@@ -24,22 +24,6 @@
     z-index: 1;
 }
 
-.security-hero {
-    background-image: linear-gradient(
-        to right,
-        rgba(36, 94, 138, 0.1),
-        rgba(36, 94, 138, 0.3)
-    );
-}
-
-.networking-hero {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.05),
-        rgba(0, 0, 0, 0.2)
-    );
-}
-
 .solution-hero-container {
     max-width: 1280px;
     margin: 0 auto;

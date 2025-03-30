@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 80px;
+    padding: 0 40px;
     margin: 0 auto;
     max-width: 980px;
 }
@@ -45,38 +45,87 @@
     position: relative;
 }
 
-/* Expanded gradient overlays to ensure proper fade effect for infinite carousel */
+/* Move gradients further out to not overlap with visible cards */
 .testimonials-viewport::before,
 .testimonials-viewport::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 140px;
+    width: 60px;
     z-index: 10;
     pointer-events: none;
 }
 
 .testimonials-viewport::before {
-    left: -10px;
+    left: -30px;
     background: linear-gradient(
         to right,
         rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.9) 30%,
-        rgba(255, 255, 255, 0.6) 60%,
+        rgba(255, 255, 255, 0.8) 50%,
         rgba(255, 255, 255, 0) 100%
     );
 }
 
 .testimonials-viewport::after {
-    right: -10px;
+    right: -30px;
     background: linear-gradient(
         to left,
         rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.9) 30%,
-        rgba(255, 255, 255, 0.6) 60%,
+        rgba(255, 255, 255, 0.8) 50%,
         rgba(255, 255, 255, 0) 100%
     );
+}
+
+/* Adjust the gradients for each card count variation */
+.testimonials-carousel.cards-3 .testimonials-viewport::before,
+.testimonials-carousel.cards-3 .testimonials-viewport::after {
+    width: 80px;
+    left: -80px;
+    right: -80px;
+}
+
+.testimonials-carousel.cards-3 .testimonials-viewport::before {
+    left: -80px;
+}
+
+.testimonials-carousel.cards-3 .testimonials-viewport::after {
+    right: -80px;
+}
+
+.testimonials-carousel.cards-1 {
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonials-carousel.cards-1 .testimonials-viewport {
+    max-width: 398px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonials-carousel.cards-1 .testimonials-track {
+    padding-left: calc(50% - 120px - 16px); /* Center single card */
+}
+
+/* Reset and simplify single card styling */
+.testimonials-carousel.cards-1 .testimonial-card {
+    opacity: 0.4;
+    filter: blur(1px);
+    width: 240px;
+    margin: 0 16px;
+}
+
+.testimonials-carousel.cards-1 .testimonial-card.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Remove gradients for single card mode */
+.testimonials-carousel.cards-1 .testimonials-viewport::before,
+.testimonials-carousel.cards-1 .testimonials-viewport::after {
+    display: none;
 }
 
 .testimonials-track {
@@ -98,6 +147,7 @@
     width: 240px;
     opacity: 0.4;
     filter: blur(1px);
+    transform: scale(0.98);
 }
 
 .testimonial-card:first-child {
@@ -134,14 +184,29 @@
     cursor: not-allowed;
 }
 
-.prev-btn {
-    left: 20px;
-    z-index: 20;
+/* Position buttons based on card count */
+.testimonials-carousel.cards-1 .prev-btn {
+    left: 0;
 }
 
-.next-btn {
+.testimonials-carousel.cards-1 .next-btn {
+    right: 0;
+}
+
+.testimonials-carousel.cards-2 .prev-btn {
+    left: 10px;
+}
+
+.testimonials-carousel.cards-2 .next-btn {
+    right: 10px;
+}
+
+.testimonials-carousel.cards-3 .prev-btn {
+    left: 20px;
+}
+
+.testimonials-carousel.cards-3 .next-btn {
     right: 20px;
-    z-index: 20;
 }
 
 /* Active cards are fully visible */
@@ -149,17 +214,35 @@
     opacity: 1;
     filter: blur(0);
     z-index: 2;
+    transform: scale(1);
 }
 
 /* Peeking cards should be partially visible to ensure they're always seen */
 .testimonial-card.peeking {
-    opacity: 0.7;
+    opacity: 0.6;
     filter: blur(0.5px);
     z-index: 1;
 }
 
+/* Non-active, non-peeking cards */
+.testimonial-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease,
+        filter 0.3s ease;
+    flex-shrink: 0;
+    background-color: white;
+    margin: 0 16px;
+    width: 240px;
+    opacity: 0.4;
+    filter: blur(1px);
+    transform: scale(0.98);
+}
+
+/* Card hover states */
 .testimonial-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     opacity: 1;
     filter: blur(0);
@@ -284,6 +367,25 @@
     transform: scale(1.2);
 }
 
+/* Card count variations - Set proper widths based on visible cards */
+.testimonials-carousel.cards-2 {
+    max-width: 750px; /* Default (current) width */
+}
+
+.testimonials-carousel.cards-2 .testimonials-viewport {
+    max-width: 700px; /* Two cards width + spacing */
+    margin: 0 auto;
+}
+
+.testimonials-carousel.cards-3 {
+    max-width: 1000px;
+}
+
+.testimonials-carousel.cards-3 .testimonials-viewport {
+    max-width: 800px; /* Three cards width + spacing */
+    margin: 0 auto;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .testimonials-carousel {
@@ -295,13 +397,26 @@
         padding-left: calc(50% - 120px - 16px) !important;
     }
 
+    /* Don't force padding-left for single card mode */
+    .testimonials-carousel.cards-1 .testimonials-track {
+        padding-left: 0 !important;
+    }
+
     .testimonial-card {
         width: 200px;
     }
 
     .testimonials-viewport::before,
     .testimonials-viewport::after {
-        width: 80px;
+        width: 40px;
+    }
+
+    .testimonials-viewport::before {
+        left: -40px;
+    }
+
+    .testimonials-viewport::after {
+        right: -40px;
     }
 
     .carousel-btn {
@@ -315,16 +430,6 @@
 
     .next-btn {
         right: 15px;
-    }
-
-    .testimonial-card.active {
-        opacity: 0.6;
-        filter: blur(2px);
-    }
-
-    .testimonial-card.active:first-child {
-        opacity: 1;
-        filter: blur(0);
     }
 
     .section-title {
