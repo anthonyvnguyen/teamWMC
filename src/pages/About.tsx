@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/About.css";
+import wmcLogo from "../assets/images/wmc_logo_black.png";
+import naviImage from "../assets/images/navi.jpeg";
+import americanFlag from "../assets/images/american_flag.jpeg";
+import ctgTechImage from "../assets/images/ctg_tech.jpg";
+import gditImage from "../assets/images/gdit.jpg";
+import contactBgImage from "../assets/images/contact_bg.jpg";
 
 const About = () => {
     return (
@@ -12,154 +18,110 @@ const About = () => {
             <main>
                 <section className="about-hero">
                     <div className="about-hero-container">
-                        <h1>About Us</h1>
-                        <p>
-                            Learn more about Team WMC and our mission to
-                            transform digital landscapes
-                        </p>
+                        <div className="about-hero-text">
+                            <h1>About Team WMC</h1>
+                            <p>Your Partner in Digital Transformations</p>
+                        </div>
+                        <img
+                            src={wmcLogo}
+                            alt="Team WMC Logo"
+                            className="about-hero-logo"
+                        />
                     </div>
                 </section>
 
-                <section className="about-section">
-                    <div className="about-container">
-                        <div className="about-story">
-                            <h2>Our Story</h2>
+                <section className="who-we-are">
+                    <img
+                        src={americanFlag}
+                        alt="American Flag"
+                        className="american-flag-bg"
+                    />
+                    <div className="who-we-are-container">
+                        <div className="who-we-are-content">
+                            <h2>Who We Are</h2>
                             <p>
-                                Founded in 2015, Team WMC began with a simple
-                                mission: to help businesses navigate the
-                                complexities of the digital world. What started
-                                as a small team of passionate technologists has
-                                grown into a comprehensive IT solutions provider
-                                serving clients across industries.
-                            </p>
-                            <p>
-                                Our journey has been defined by a commitment to
-                                innovation, technical excellence, and customer
-                                satisfaction. As technology evolves, so do we,
-                                continuously expanding our expertise to address
-                                the ever-changing digital landscape.
-                            </p>
-                            <p>
-                                Today, Team WMC is proud to offer end-to-end
-                                solutions in cloud computing, cyber security,
-                                and networking, helping organizations of all
-                                sizes achieve their digital transformation
-                                goals.
+                                At Team WMC, we are committed to delivering
+                                cutting-edge technology solutions that empower
+                                businesses, secure digital landscapes, and drive
+                                transformation. As a Small Disadvantaged
+                                Business (SDB) with deep expertise in
+                                cybersecurity, cloud solutions, and networking,
+                                we help organizations navigate the evolving
+                                digital world with confidence.
                             </p>
                         </div>
+                    </div>
+                </section>
 
-                        <div className="mission-vision">
-                            <div className="mission-box">
-                                <h3>Our Mission</h3>
-                                <p>
-                                    To empower businesses with innovative
-                                    technology solutions that drive growth,
-                                    enhance security, and optimize performance.
-                                </p>
-                            </div>
-                            <div className="vision-box">
-                                <h3>Our Vision</h3>
-                                <p>
-                                    To be the trusted technology partner for
-                                    businesses worldwide, leading the way in
-                                    digital transformation and technological
-                                    advancement.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="values-section">
-                            <h2>Our Core Values</h2>
-                            <div className="values-grid">
-                                <div className="value-card">
-                                    <div className="value-icon">🚀</div>
-                                    <h3>Innovation</h3>
-                                    <p>
-                                        We embrace new technologies and ideas,
-                                        constantly seeking better ways to solve
-                                        complex problems.
-                                    </p>
-                                </div>
-                                <div className="value-card">
-                                    <div className="value-icon">🤝</div>
-                                    <h3>Collaboration</h3>
-                                    <p>
-                                        We work closely with our clients,
-                                        forming partnerships built on trust and
-                                        mutual success.
-                                    </p>
-                                </div>
-                                <div className="value-card">
-                                    <div className="value-icon">🎯</div>
-                                    <h3>Excellence</h3>
-                                    <p>
-                                        We strive for excellence in everything
-                                        we do, from technical implementation to
-                                        customer service.
-                                    </p>
-                                </div>
-                                <div className="value-card">
-                                    <div className="value-icon">🛡️</div>
-                                    <h3>Integrity</h3>
-                                    <p>
-                                        We uphold the highest standards of
-                                        honesty, transparency, and ethical
-                                        conduct in all our dealings.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="team-section">
-                            <h2>Our Leadership Team</h2>
-                            <div className="team-grid">
-                                <div className="team-member">
-                                    <div className="member-image placeholder-avatar"></div>
-                                    <h3>John Doe</h3>
-                                    <p className="member-role">CEO & Founder</p>
-                                    <p className="member-bio">
-                                        With over 20 years of experience in
-                                        technology, John leads Team WMC's
-                                        strategic vision and operations.
-                                    </p>
-                                </div>
-                                <div className="team-member">
-                                    <div className="member-image placeholder-avatar"></div>
-                                    <h3>Jane Smith</h3>
-                                    <p className="member-role">CTO</p>
-                                    <p className="member-bio">
-                                        Jane brings extensive expertise in cloud
-                                        architecture and cybersecurity to drive
-                                        our technical innovation.
-                                    </p>
-                                </div>
-                                <div className="team-member">
-                                    <div className="member-image placeholder-avatar"></div>
-                                    <h3>Michael Johnson</h3>
-                                    <p className="member-role">
-                                        VP of Operations
-                                    </p>
-                                    <p className="member-bio">
-                                        Michael ensures smooth delivery of our
-                                        services and maintains our high
-                                        standards of quality.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="cta-section">
-                            <h2>Join Our Journey</h2>
+                <section className="our-mission">
+                    <div className="our-mission-container">
+                        <div className="our-mission-content">
+                            <h2>Our Mission</h2>
                             <p>
-                                Are you ready to transform your digital
-                                landscape with Team WMC? Let's discuss how our
-                                solutions can help your business thrive in the
-                                digital age.
+                                We believe in harnessing technology to safeguard
+                                businesses, enhance operational efficiency, and
+                                enable sustainable growth. Our mission is to
+                                provide tailored, high-impact solutions that
+                                address the unique challenges of our clients.
                             </p>
-                            <Link to="/contact" className="btn primary-btn">
-                                Contact Us
-                            </Link>
                         </div>
+                        <div className="mission-values">
+                            <div className="mission-value">
+                                <h3>Protect</h3>
+                            </div>
+                            <div className="mission-value">
+                                <h3>Innovate</h3>
+                            </div>
+                            <div className="mission-value">
+                                <h3>Transform</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="meet-ceo">
+                    <div className="meet-ceo-container">
+                        <div className="meet-ceo-content">
+                            <h2>Meet Our CEO</h2>
+                            <p>
+                                Navi Chhabra leads Team WMC with a vision for
+                                innovation, security, and excellence. A graduate
+                                of George Washington University (Class of 1996),
+                                Navi brings decades of experience in networking
+                                and cybersecurity. As a VoIP Team Lead, he
+                                specializes in advanced communication
+                                technologies and secure network infrastructure.
+                                He combines his deep technical expertise with
+                                leadership to drive Team WMC's mission of
+                                securing digital infrastructure.
+                            </p>
+                        </div>
+                        <div className="ceo-profile">
+                            <img
+                                src={naviImage}
+                                alt="Navi Chhabra"
+                                className="ceo-image"
+                            />
+                            <h3 className="ceo-name">Navi Chhabra</h3>
+                            <p className="ceo-title">Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="cta-section">
+                    <div className="cta-container">
+                        <h2>Our Commitment to Your Success</h2>
+                        <p>
+                            At Team WMC, we are more than just a technology
+                            provider—we are your trusted partner in digital
+                            transformation. We are dedicated to helping
+                            businesses thrive in an era of rapid technological
+                            change, ensuring they remain secure, efficient, and
+                            competitive.
+                        </p>
+                        <Link to="/contact" className="btn primary-btn">
+                            Contact Us
+                        </Link>
                     </div>
                 </section>
             </main>

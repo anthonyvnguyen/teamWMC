@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
                         alt="Team WMC Logo"
                         className="wmc-logo"
                     />
-                    <p>Team WMC</p>
+                    <p>TEAM WMC</p>
                 </div>
                 <div className="footer-links">
                     <div className="footer-column">
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>© 2023 Team WMC. All rights reserved.</p>
+                <p>© 2023 TEAM WMC. All rights reserved.</p>
             </div>
         </footer>
     );

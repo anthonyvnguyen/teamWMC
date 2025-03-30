@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
                             alt="Team WMC Logo"
                             className="wmc-logo"
                         />
-                        <h1 className="navbar-title">Team WMC</h1>
+                        <h1 className="navbar-title">TEAM WMC</h1>
                         <img
                             src={sbaLogo}
                             alt="SBA Logo"
