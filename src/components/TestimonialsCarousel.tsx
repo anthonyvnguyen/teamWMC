@@ -20,8 +20,10 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
+    const [expandedTechCards, setExpandedTechCards] = useState<number[]>([]);
     const trackRef = useRef<HTMLDivElement>(null);
     const autoRotateRef = useRef<NodeJS.Timeout | null>(null);
+    const techBadgesRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
 
     // Get the actual testimonials from IDs
     const testimonials = testimonialIds
@@ -318,6 +320,36 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     // Add specific classes for carousel width based on visible cards
     const carouselSizeClass = `cards-${visibleCards}`;
 
+    const toggleTechBadges = (testimonialId: number) => {
+        setExpandedTechCards((prev) =>
+            prev.includes(testimonialId)
+                ? prev.filter((id) => id !== testimonialId)
+                : [...prev, testimonialId]
+        );
+    };
+
+    const isTechBadgesOverflowing = (testimonialId: number): boolean => {
+        const element = techBadgesRefs.current[testimonialId];
+        if (!element) return false;
+
+        const badges = Array.from(element.getElementsByClassName("badge"));
+        if (badges.length <= 3) return false;
+
+        let lastTopPosition = 0;
+        let rowCount = 1;
+
+        badges.forEach((badge) => {
+            const rect = (badge as HTMLElement).getBoundingClientRect();
+            if (rect.top > lastTopPosition + 2) {
+                // Add small threshold for rounding errors
+                rowCount++;
+                lastTopPosition = rect.top;
+            }
+        });
+
+        return rowCount > 3;
+    };
+
     return (
         <div className={`testimonials-container ${className}`}>
             {title && <h2 className="section-title">{title}</h2>}
@@ -376,26 +408,85 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                                         )}
                                     </div>
                                 </div>
-                                <div className="card-content">
-                                    <h3 className="card-title">
-                                        {testimonial.title}
-                                    </h3>
-                                    <div className="tech-badges">
-                                        {testimonial.technologies.map(
-                                            (tech, techIndex) => (
-                                                <span
-                                                    className="badge"
-                                                    key={techIndex}
+                                <div className="card-wrapper">
+                                    <div className="card-content">
+                                        <h3 className="card-title">
+                                            {testimonial.title}
+                                        </h3>
+                                        
+                                        <div className="tech-badges-wrapper">
+                                            <div
+                                                className={`tech-badges ${
+                                                    expandedTechCards.includes(
+                                                        testimonial.id
+                                                    )
+                                                        ? "expanded"
+                                                        : ""
+                                                }`}
+                                                ref={(el) =>
+                                                    (techBadgesRefs.current[
+                                                        testimonial.id
+                                                    ] = el)
+                                                }
+                                            >
+                                                {testimonial.technologies.map(
+                                                    (tech, techIndex) => (
+                                                        <span
+                                                            className="badge"
+                                                            key={techIndex}
+                                                        >
+                                                            {tech}
+                                                        </span>
+                                                    )
+                                                )}
+                                            </div>
+                                            {isTechBadgesOverflowing(
+                                                testimonial.id
+                                            ) && (
+                                                <button
+                                                    className={`toggle-badge ${
+                                                        expandedTechCards.includes(
+                                                            testimonial.id
+                                                        )
+                                                            ? "expanded"
+                                                            : ""
+                                                    }`}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        toggleTechBadges(
+                                                            testimonial.id
+                                                        );
+                                                    }}
+                                                    aria-label={
+                                                        expandedTechCards.includes(
+                                                            testimonial.id
+                                                        )
+                                                            ? "Show less technologies"
+                                                            : "Show more technologies"
+                                                    }
                                                 >
-                                                    {tech}
-                                                </span>
-                                            )
-                                        )}
-                                    </div>
-                                    <p>{testimonial.description}</p>
-                                    <div className="testimonial-author">
-                                        <h4>{testimonial.author.name}</h4>
-                                        <p>{testimonial.author.title}</p>
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="16"
+                                                        height="16"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    >
+                                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                                    </svg>
+                                                </button>
+                                            )}
+                                        </div>
+                                        <p>{testimonial.description}</p>
+
+                                        <div className="testimonial-author">
+                                            <h4>{testimonial.author.name}</h4>
+                                            <p>{testimonial.author.title}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

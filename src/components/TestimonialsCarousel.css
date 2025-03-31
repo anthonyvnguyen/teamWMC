@@ -138,7 +138,7 @@
 .testimonial-card {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease,
         filter 0.3s ease;
     flex-shrink: 0;
@@ -224,22 +224,6 @@
     z-index: 1;
 }
 
-/* Non-active, non-peeking cards */
-.testimonial-card {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease,
-        filter 0.3s ease;
-    flex-shrink: 0;
-    background-color: white;
-    margin: 0 16px;
-    width: 240px;
-    opacity: 0.4;
-    filter: blur(1px);
-    transform: scale(0.98);
-}
-
 /* Card hover states */
 .testimonial-card:hover {
     transform: translateY(-8px) scale(1);
@@ -300,9 +284,45 @@
 
 .tech-badges {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 8px;
+    margin-bottom: 20px; /* Space for the button */
+    position: relative;
+    transition: all 0.3s ease;
+    min-height: 60px;
+    padding-bottom: 28px; /* Space for button plus 3px gap */
+}
+
+/* Container for the actual badges */
+.tech-badges::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1) 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tech-badges:not(.expanded) {
+    max-height: 60px;
+    overflow: hidden;
+}
+
+.tech-badges:not(.expanded)::before {
+    opacity: 1;
+}
+
+.tech-badges.expanded {
+    max-height: none;
 }
 
 .badge {
@@ -311,12 +331,71 @@
     text-transform: uppercase;
     background-color: #f0f7ff;
     color: #245e8a;
-    padding: 2px 5px;
+    padding: 3px 6px;
     border-radius: 3px;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    margin: 1px;
 }
 
-.card-content p {
+.tech-badges-wrapper {
+    position: relative;
+}
+
+.toggle-badge {
+    font-size: 10px;
+    font-weight: 600;
+    background-color: #245e8a;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -14px; /* Position 3px from bottom of container */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-badge:hover {
+    background-color: #1a4c75;
+    transform: translateX(-50%) translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-badge svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-badge.expanded {
+    transform: translate(-50%, -6px);
+}
+
+.toggle-badge.expanded svg {
+    transform: rotate(180deg);
+}
+
+/* Remove this rule to ensure consistent positioning */
+.tech-badges.expanded .toggle-badge {
+    /* bottom: 0; */ /* This rule is removed */
+}
+
+/* Add spacing between badges and description */
+.card-content > p {
+    margin-top: 20px;
     color: #555;
     font-style: italic;
     margin-bottom: 10px;
