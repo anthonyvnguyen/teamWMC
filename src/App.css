@@ -309,38 +309,65 @@ body {
     line-height: 1.7;
 }
 
+.why-us-text .btn {
+    display: block;
+    margin: 0 auto;
+    width: 104px;
+}
+
 .why-us-section .benefits-list {
     list-style: none;
     margin: 24px 0 32px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
 }
 
 .why-us-section .benefits-list li {
     display: flex;
-    margin-bottom: 0px;
-    align-items: flex-start;
-    padding: 12px 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    background-color: rgba(255, 255, 255, 0.03);
+    align-items: center;
+    padding: 20px 24px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .why-us-section .benefits-list li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    border-color: #e8e8e8;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(36, 94, 138, 0.15);
+    border-color: rgba(36, 94, 138, 0.3);
     cursor: default;
 }
 
 .check-mark {
     color: #245e8a;
     font-weight: bold;
-    margin-right: 12px;
-    font-size: 18px;
+    margin-right: 16px;
+    font-size: 20px;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background-color: rgba(36, 94, 138, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.why-us-section .benefits-list li:hover .check-mark {
+    background-color: #245e8a;
+    color: white;
+    transform: scale(1.1);
+}
+
+.why-us-section .benefits-list li span:not(.check-mark) {
+    font-size: 17px;
+    font-weight: 500;
+    color: #374151;
+    line-height: 1.5;
 }
 
 .why-us-image {
@@ -396,7 +423,7 @@ body {
 /* Stats Section */
 .stats-section {
     padding: 60px 20px;
-    background-color: #245e8a;
+    background: linear-gradient(to bottom left, #1a80c9, #245e8a);
     color: #fff;
 }
 

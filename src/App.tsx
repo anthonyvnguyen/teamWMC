@@ -233,15 +233,15 @@ function App() {
                     <h2>Meet Team WMC</h2>
                     <div className="stats-container">
                         <div className="stat-item">
-                            <h3>X+</h3>
+                            <h3>200+</h3>
                             <p>Successful Security Implementations</p>
                         </div>
                         <div className="stat-item">
-                            <h3>X+</h3>
+                            <h3>40+</h3>
                             <p>Certified Experts</p>
                         </div>
                         <div className="stat-item">
-                            <h3>X+</h3>
+                            <h3>40+</h3>
                             <p>Successful Cloud Implementations</p>
                         </div>
                     </div>
