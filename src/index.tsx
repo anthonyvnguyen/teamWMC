@@ -7,7 +7,7 @@ import CloudSolutions from "./pages/CloudSolutions";
 import CyberSecurity from "./pages/CyberSecurity";
 import Networking from "./pages/Networking";
 import Contact from "./pages/Contact";
-import Insights from "./pages/Insights";
+import SuccessStories from "./pages/Insights";
 import About from "./pages/About";
 import reportWebVitals from "./reportWebVitals";
 
@@ -23,7 +23,7 @@ root.render(
                 <Route path="/security" element={<CyberSecurity />} />
                 <Route path="/networking" element={<Networking />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/insights" element={<Insights />} />
+                <Route path="/insights" element={<SuccessStories />} />
                 <Route path="/about" element={<About />} />
             </Routes>
         </BrowserRouter>

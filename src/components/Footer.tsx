@@ -12,13 +12,15 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
-                <div className="footer-logo">
-                    <img
-                        src={wmcLogo}
-                        alt="Team WMC Logo"
-                        className="wmc-logo"
-                    />
-                    <p>TEAM WMC</p>
+                <div className="footer-left">
+                    <div className="footer-logo">
+                        <img
+                            src={wmcLogo}
+                            alt="Team WMC Logo"
+                            className="wmc-logo"
+                        />
+                        <p>TEAM WMC</p>
+                    </div>
                 </div>
                 <div className="footer-links">
                     <div className="footer-column">
@@ -63,8 +65,16 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <div className="footer-naics">
+                <h4>NAICS Codes:</h4>
+                <p>
+                    541519 - Other Computer Related Services | 541512 - Computer
+                    Systems Design Services | 541611 - Administrative Management
+                    and General Management Consulting Services
+                </p>
+            </div>
             <div className="footer-bottom">
-                <p>© 2023 TEAM WMC. All rights reserved.</p>
+                <p>© 2024 TEAM WMC. All rights reserved.</p>
             </div>
         </footer>
     );

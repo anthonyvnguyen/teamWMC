@@ -78,18 +78,18 @@ const Contact = () => {
                             <div className="contact-methods">
                                 <div className="contact-method">
                                     <h3>Email</h3>
-                                    <p>info@teamwmc.com</p>
+                                    <p>navi.chhabra@gmail.com</p>
                                 </div>
                                 <div className="contact-method">
                                     <h3>Phone</h3>
-                                    <p>(123) 456-7890</p>
+                                    <p>(202) 556-3399</p>
                                 </div>
                                 <div className="contact-method">
                                     <h3>Address</h3>
                                     <p>
-                                        123 Tech Lane, Suite 100
+                                        4604 Kenmore Dr NW,
                                         <br />
-                                        San Francisco, CA 94105
+                                        Washington, DC 20007
                                     </p>
                                 </div>
                             </div>
@@ -100,6 +100,16 @@ const Contact = () => {
                                     Monday - Friday: 9:00 AM - 5:00 PM
                                     <br />
                                     Saturday - Sunday: Closed
+                                </p>
+                            </div>
+
+                            <div className="naics-codes">
+                                <h3>NAICS Codes</h3>
+                                <p>541519 - Other Computer Related Services</p>
+                                <p>541512 - Computer Systems Design Services</p>
+                                <p>
+                                    541611 - Administrative Management and
+                                    General Management Consulting Services
                                 </p>
                             </div>
                         </div>

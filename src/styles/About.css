@@ -335,24 +335,6 @@
     background-color: #000;
 }
 
-/* Footer */
-.footer-naics {
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.footer-naics h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.footer-naics p {
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 5px;
-}
-
 /* About Contact Section */
 .about-contact {
     background-color: #245e8a;

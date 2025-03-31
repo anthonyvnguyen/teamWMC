@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
                                 to="/insights"
                                 onClick={closeMobileMenuAndScrollToTop}
                             >
-                                Insights
+                                Success Stories
                             </Link>
                         </li>
                         <li>

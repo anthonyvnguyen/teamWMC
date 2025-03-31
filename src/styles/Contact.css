@@ -81,7 +81,8 @@
 }
 
 .contact-method h3,
-.business-hours h3 {
+.business-hours h3,
+.naics-codes h3 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -89,10 +90,19 @@
 }
 
 .contact-method p,
-.business-hours p {
+.business-hours p,
+.naics-codes p {
     font-size: 16px;
     color: #555;
     line-height: 1.6;
+}
+
+.naics-codes {
+    margin-top: 32px;
+}
+
+.naics-codes p {
+    margin-bottom: 5px;
 }
 
 /* Contact Form */
@@ -120,7 +130,6 @@
     height: 3px;
     background-color: #245e8a;
 }
-
 
 /* Form Success */
 .form-success {
