@@ -392,7 +392,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                                             )
                                         )}
                                     </div>
-                                    <p>{testimonial.quote}</p>
+                                    <p>{testimonial.description}</p>
                                     <div className="testimonial-author">
                                         <h4>{testimonial.author.name}</h4>
                                         <p>{testimonial.author.title}</p>

@@ -1,7 +1,7 @@
 export interface Testimonial {
     id: number;
     title: string;
-    quote: string;
+    description: string;
     author: {
         name: string;
         title: string;
@@ -13,72 +13,78 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
     {
         id: 1,
-        title: "Global Financial Institution Security Overhaul",
-        quote: "Team WMC transformed our IT infrastructure, enhancing security and performance while reducing costs. Their expertise and support have been invaluable to our business.",
+        title: "Nationwide Network Infrastructure Deployment",
+        description:
+            "Team WMC led a comprehensive staffing initiative to support a nationwide network infrastructure upgrade. Our engineers were deployed to multiple client locations to install, configure, and validate high-performance networking hardware. The project improved network redundancy, increased bandwidth capacity, and ensured scalable connectivity across the organization.",
         author: {
-            name: "John Smith",
-            title: "CTO, ABC Corporation",
+            name: "Undisclosed",
+            title: "Field Engineering Support - Nationwide Rollout",
         },
         technologies: [
-            "CLOUD MIGRATION",
-            "CYBER SECURITY",
-            "PENETRATION TESTING",
+            "Network Engineering",
+            "Switch Configuration",
+            "Firewall Deployment",
+            "LAN/WAN Optimization",
+            "Cabling and Rack Design",
+            "Network Monitoring Tools (e.g., SolarWinds, Nagios)",
         ],
         imageUrl: "/images/testimonials/financial.jpg",
     },
     {
         id: 2,
-        title: "Healthcare Provider Network Solutions",
-        quote: "Working with Team WMC has been a game-changer for our organization. Their communication solutions delivered exactly what we needed, connecting our multiple locations seamlessly.",
+        title: "Enterprise VOIP System Rollout",
+        description:
+            "Team WMC provided specialized staffing for the end-to-end deployment of a VOIP communications system across the client’s enterprise. Our engineers handled hardware setup, PBX system configuration, and integration with collaboration platforms. The outcome was a seamless, secure voice communication network that supported remote and on-site teams alike.",
         author: {
-            name: "Sarah Johnson",
-            title: "CEO, XYZ Healthcare",
+            name: "Undisclosed",
+            title: "Telecom Infrastructure & Deployment",
         },
-        technologies: ["VOIP", "CISCO", "WEBEX", "NETWORK SECURITY"],
+        technologies: [
+            "VOIP Engineering",
+            "Cisco Unified Communications",
+            "PBX Systems",
+            "SIP Trunking",
+            "Quality of Service (QoS)",
+            "VOIP Security and Encryption",
+        ],
         imageUrl: "/images/testimonials/healthcare.jpg",
     },
     {
         id: 3,
-        title: "Retail Chain Cloud Transformation",
-        quote: "Team WMC's expertise in cloud solutions helped migrate our entire infrastructure to AWS, resulting in 40% cost savings and significantly improved performance.",
+        title: "Multisite Audiovisual System Integration",
+        description:
+            "Team WMC staffed experienced AV engineers to design and deploy audiovisual systems across a network of client sites. The project included integration of conferencing hardware, digital signage, and AV-over-IP systems to support hybrid collaboration environments and dynamic content delivery.",
         author: {
-            name: "Michael Brown",
-            title: "IT Director, RetailPlus Inc.",
+            name: "Undisclosed",
+            title: "AV System Design & Integration Services",
         },
-        technologies: ["AWS", "CLOUD MIGRATION", "DEVOPS"],
+        technologies: [
+            "AV Engineering",
+            "Crestron / Extron Control Systems",
+            "AV-over-IP Solutions",
+            "Video Conferencing Integration",
+            "Digital Signage Systems",
+            "Low-Voltage Cabling and Rack Setup",
+        ],
         imageUrl: "/images/testimonials/retail.jpg",
     },
     {
         id: 4,
-        title: "Government Agency Security Implementation",
-        quote: "The team at WMC understood our complex security needs and implemented a zero-trust architecture that met all our compliance requirements while improving operational efficiency.",
+        title: "Enterprise Hardware Refresh & Deployment",
+        description:
+            "Team WMC managed a large-scale hardware upgrade for an enterprise client, focusing on the deployment of Cisco networking equipment. Our team was responsible for configuring, testing, and installing next-generation routers, switches, and wireless infrastructure. The project significantly boosted system reliability, improved network speed, and laid the groundwork for future cloud integrations.",
         author: {
-            name: "Elizabeth Park",
-            title: "Security Director, Gov Agency",
+            name: "Undisclosed",
+            title: "Infrastructure Modernization Initiative",
         },
-        technologies: ["ZERO TRUST", "IDENTITY MANAGEMENT", "COMPLIANCE"],
-        imageUrl: "/images/testimonials/government.jpg",
-    },
-    {
-        id: 5,
-        title: "Education Institution Network Upgrade",
-        quote: "Team WMC modernized our entire campus network infrastructure, improving reliability, security, and performance for our students and faculty. The project was completed on time and within budget.",
-        author: {
-            name: "David Wilson",
-            title: "CIO, State University",
-        },
-        technologies: ["SDN", "NETWORK INFRASTRUCTURE", "WIFI 6"],
-        imageUrl: "/images/testimonials/education.jpg",
-    },
-    {
-        id: 6,
-        title: "Manufacturing Company Digital Transformation",
-        quote: "The cloud migration and IoT implementation provided by Team WMC has revolutionized our production monitoring and supply chain management. We've seen a 30% increase in operational efficiency.",
-        author: {
-            name: "Jennifer Lee",
-            title: "Operations Director, Global Manufacturing Inc.",
-        },
-        technologies: ["IOT", "CLOUD COMPUTING", "DATA ANALYTICS"],
-        imageUrl: "/images/testimonials/manufacturing.jpg",
+        technologies: [
+            "Cisco Hardware (Switches, Routers, Wireless Controllers)",
+            "Network Configuration & Provisioning",
+            "On-Site Deployment Logistics",
+            "Firmware Upgrades",
+            "Hardware Lifecycle Management",
+            "Network Performance Tuning",
+        ],
+        imageUrl: "/images/testimonials/financial.jpg",
     },
 ];

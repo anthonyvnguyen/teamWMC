@@ -25,13 +25,13 @@ const SuccessStories = () => {
     // Filter testimonials based on search term and selected technologies
     useEffect(() => {
         const filtered = testimonials.filter((testimonial) => {
-            // Search term filter (check title, quote, author)
+            // Search term filter (check title, description, author)
             const searchMatch =
                 searchTerm === "" ||
                 testimonial.title
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase()) ||
-                testimonial.quote
+                testimonial.description
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase()) ||
                 testimonial.author.name
@@ -188,8 +188,8 @@ const SuccessStories = () => {
                                             ></div>
                                             <div className="insight-content">
                                                 <h3>{testimonial.title}</h3>
-                                                <p className="testimonial-quote">
-                                                    "{testimonial.quote}"
+                                                <p className="testimonial-description">
+                                                    "{testimonial.description}"
                                                 </p>
                                                 <div className="author-info">
                                                     <span className="author-name">
