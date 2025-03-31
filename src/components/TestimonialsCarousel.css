@@ -415,6 +415,12 @@
     color: #333;
 }
 
+.testimonial-author h4::before {
+    content: "Company: ";
+    font-weight: lighter; /* Adjust weight if desired */
+    margin-right: 4px; /* Space between "Company:" and the name */
+}
+
 .testimonial-author p {
     font-size: 12px;
     color: #666;

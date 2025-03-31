@@ -350,10 +350,32 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         return rowCount > 3;
     };
 
+    const handleMouseEnter = () => {
+        if (autoRotateRef.current) {
+            clearInterval(autoRotateRef.current);
+            autoRotateRef.current = null;
+        }
+    };
+
+    const handleMouseLeave = () => {
+        // Restart the timer if there's more than one testimonial
+        if (testimonials.length > 1) {
+            autoRotateRef.current = setInterval(() => {
+                if (!animating) {
+                    goToNext();
+                }
+            }, 6000);
+        }
+    };
+
     return (
         <div className={`testimonials-container ${className}`}>
             {title && <h2 className="section-title">{title}</h2>}
-            <div className={`testimonials-carousel ${carouselSizeClass}`}>
+            <div
+                className={`testimonials-carousel ${carouselSizeClass}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
                 <button
                     className="carousel-btn prev-btn"
                     onClick={goToPrev}
@@ -413,7 +435,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                                         <h3 className="card-title">
                                             {testimonial.title}
                                         </h3>
-                                        
+
                                         <div className="tech-badges-wrapper">
                                             <div
                                                 className={`tech-badges ${
