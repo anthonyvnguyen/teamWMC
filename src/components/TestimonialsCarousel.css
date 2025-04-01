@@ -388,11 +388,6 @@
     transform: rotate(180deg);
 }
 
-/* Remove this rule to ensure consistent positioning */
-.tech-badges.expanded .toggle-badge {
-    /* bottom: 0; */ /* This rule is removed */
-}
-
 /* Add spacing between badges and description */
 .card-content > p {
     margin-top: 20px;

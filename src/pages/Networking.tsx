@@ -8,7 +8,7 @@ import "../styles/Networking.css";
 
 const Networking = () => {
     // Define testimonial IDs related to networking for the carousel
-    const testimonialIds = [1, 4, 6];
+    const testimonialIds = [1, 3, 4];
 
     // Function to scroll to top when navigating
     const scrollToTop = () => {

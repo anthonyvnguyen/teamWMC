@@ -8,7 +8,7 @@ import "../styles/CloudSolutions.css";
 
 const CloudSolutions = () => {
     // Define testimonial IDs to be displayed in the carousel
-    const testimonialIds = [1, 2, 3, 4, 5, 6];
+    const testimonialIds = [1, 2, 3, 4];
 
     // Function to scroll to top when navigating
     const scrollToTop = () => {

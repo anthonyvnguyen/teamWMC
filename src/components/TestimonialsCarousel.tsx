@@ -33,14 +33,19 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     const cardSpacing = 16; // px
     const cardWidth = 240; // px - fixed width for each card
 
+    // Check if we should enable scrolling (more than 2 testimonials)
+    const shouldEnableScrolling = testimonials.length > 2;
+
     // If we have same or fewer testimonials than visible cards, just show them directly
-    const shouldLoop = testimonials.length > visibleCards;
+    const shouldLoop =
+        shouldEnableScrolling && testimonials.length > visibleCards;
 
-    // Auto-rotate functionality
+    // Auto-rotate functionality - only if scrolling is enabled
     useEffect(() => {
-        const startAutoRotation = () => {
-            if (testimonials.length <= 1) return; // Don't auto-rotate if only one testimonial
+        // Don't setup auto rotation if scrolling is disabled
+        if (!shouldEnableScrolling) return;
 
+        const startAutoRotation = () => {
             if (autoRotateRef.current) {
                 clearInterval(autoRotateRef.current);
             }
@@ -49,7 +54,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                 if (!animating) {
                     goToNext();
                 }
-            }, 6000); // Rotate every 6 seconds
+            }, 6000);
         };
 
         startAutoRotation();
@@ -60,7 +65,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                 clearInterval(autoRotateRef.current);
             }
         };
-    }, [animating, testimonials.length]);
+    }, [animating, testimonials.length, shouldEnableScrolling]);
 
     // For infinite looping, create an array with duplicated items at both ends
     // Add items at the beginning and end for a smooth infinite loop
@@ -372,30 +377,38 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         <div className={`testimonials-container ${className}`}>
             {title && <h2 className="section-title">{title}</h2>}
             <div
-                className={`testimonials-carousel ${carouselSizeClass}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                className={`testimonials-carousel ${carouselSizeClass} ${
+                    shouldEnableScrolling ? "" : "no-scroll"
+                }`}
+                onMouseEnter={
+                    shouldEnableScrolling ? handleMouseEnter : undefined
+                }
+                onMouseLeave={
+                    shouldEnableScrolling ? handleMouseLeave : undefined
+                }
             >
-                <button
-                    className="carousel-btn prev-btn"
-                    onClick={goToPrev}
-                    disabled={animating || testimonials.length <= 1}
-                    aria-label="Previous testimonials"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                {shouldEnableScrolling && (
+                    <button
+                        className="carousel-btn prev-btn"
+                        onClick={goToPrev}
+                        disabled={animating}
+                        aria-label="Previous testimonials"
                     >
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                )}
 
                 <div className="testimonials-viewport">
                     <div
@@ -516,31 +529,33 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                     </div>
                 </div>
 
-                <button
-                    className="carousel-btn next-btn"
-                    onClick={goToNext}
-                    disabled={animating || testimonials.length <= 1}
-                    aria-label="Next testimonials"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                {shouldEnableScrolling && (
+                    <button
+                        className="carousel-btn next-btn"
+                        onClick={goToNext}
+                        disabled={animating}
+                        aria-label="Next testimonials"
                     >
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                )}
             </div>
 
-            <div className="carousel-indicators">
-                {testimonials.length > 1 &&
-                    Array.from({ length: testimonials.length }, (_, i) => (
+            {shouldEnableScrolling && testimonials.length > 1 && (
+                <div className="carousel-indicators">
+                    {Array.from({ length: testimonials.length }, (_, i) => (
                         <button
                             key={i}
                             className={`indicator ${
@@ -555,7 +570,8 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                             aria-label={`Go to slide ${i + 1}`}
                         />
                     ))}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

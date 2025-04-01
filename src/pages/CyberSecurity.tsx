@@ -8,7 +8,7 @@ import "../styles/CyberSecurity.css";
 
 const CyberSecurity = () => {
     // Define testimonial IDs related to security for the carousel
-    const testimonialIds = [2, 3, 5];
+    const testimonialIds = [2, 3];
 
     // Function to scroll to top when navigating
     const scrollToTop = () => {
