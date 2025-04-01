@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import CloudSolutions from "./pages/CloudSolutions";
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/cloud" element={<CloudSolutions />} />
@@ -26,7 +26,7 @@ root.render(
                 <Route path="/insights" element={<SuccessStories />} />
                 <Route path="/about" element={<About />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 );
 
