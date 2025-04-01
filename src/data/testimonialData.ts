@@ -1,3 +1,8 @@
+import nnidImage from "../assets/images/nnid.png";
+import masiImage from "../assets/images/masi.png";
+import evsrImage from "../assets/images/evsr.png";
+import ehrdImage from "../assets/images/ehrd.png";
+
 export interface Testimonial {
     id: number;
     title: string;
@@ -28,13 +33,13 @@ export const testimonials: Testimonial[] = [
             "Rack & Cabling Design",
             "Network Monitoring Tools",
         ],
-        imageUrl: "/images/testimonials/financial.jpg",
+        imageUrl: nnidImage,
     },
     {
         id: 2,
         title: "Enterprise VOIP System Rollout",
         description:
-            "Team WMC provided specialized staffing for the end-to-end deployment of a VOIP communications system across the client’s enterprise. Our engineers handled hardware setup, PBX system configuration, and integration with collaboration platforms. The outcome was a seamless, secure voice communication network that supported remote and on-site teams alike.",
+            "Team WMC provided specialized staffing for the end-to-end deployment of a VOIP communications system across the client's enterprise. Our engineers handled hardware setup, PBX system configuration, and integration with collaboration platforms. The outcome was a seamless, secure voice communication network that supported remote and on-site teams alike.",
         author: {
             name: "Undisclosed",
             title: "Telecom Infrastructure & Deployment",
@@ -45,7 +50,7 @@ export const testimonials: Testimonial[] = [
             "PBX & SIP Trunking",
             "Network QoS & Security",
         ],
-        imageUrl: "/images/testimonials/healthcare.jpg",
+        imageUrl: masiImage,
     },
     {
         id: 3,
@@ -63,7 +68,7 @@ export const testimonials: Testimonial[] = [
             "Digital Signage",
             "Structured Cabling",
         ],
-        imageUrl: "/images/testimonials/retail.jpg",
+        imageUrl: evsrImage,
     },
     {
         id: 4,
@@ -80,6 +85,6 @@ export const testimonials: Testimonial[] = [
             "On-Site Deployment Logistics",
             "Performance Tuning",
         ],
-        imageUrl: "/images/testimonials/financial.jpg",
+        imageUrl: ehrdImage,
     },
 ];
