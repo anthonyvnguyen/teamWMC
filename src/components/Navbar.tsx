@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import wmcLogo from "../assets/images/wmc_logo_black.png";
+// import wmcLogo from "../assets/images/wmc_logo_black.png";
+import wmcLogo from "../assets/images/wmc_logo.png";
 import sbaLogo from "../assets/images/sba_logo.png";
 
 const Navbar: React.FC = () => {

@@ -4,7 +4,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import Footer from "./components/Footer";
-import wmcLogo from "./assets/images/wmc_logo_black.png";
+// import wmcLogo from "./assets/images/wmc_logo_black.png";
+import wmcLogo from "./assets/images/wmc_logo.png";
 
 function App() {
     // Array of testimonial IDs to display

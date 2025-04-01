@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import wmcLogo from "../assets/images/wmc_logo_white.png";
-
+// import wmcLogo from "../assets/images/wmc_logo_white.png";
+import wmcLogo from "../assets/images/wmc_logo.png";
 const Footer: React.FC = () => {
     // Function to scroll to top when navigating
     const scrollToTop = () => {

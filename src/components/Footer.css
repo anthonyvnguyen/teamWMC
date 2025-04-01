@@ -42,13 +42,13 @@
 
 .footer-column {
     min-width: 120px;
+    text-align: left;
 }
 
 .footer-column h4 {
     font-size: 18px;
     margin-bottom: 20px;
     position: relative;
-    text-align: left;
     margin-top: 0;
 }
 
