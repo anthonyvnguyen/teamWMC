@@ -15,6 +15,7 @@
 }
 
 .contact-hero h1 {
+    color: var(--color-primary);
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 16px;
@@ -63,7 +64,7 @@
     left: 0;
     width: 50px;
     height: 3px;
-    background-color: var(--color-highlight-blue);
+    background-color: var(--color-secondary);
 }
 
 .contact-info > p {
@@ -87,7 +88,7 @@
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--color-highlight-blue);
+    color: var(--color-secondary);
 }
 
 .contact-method p,
@@ -129,7 +130,7 @@
     left: 0;
     width: 50px;
     height: 3px;
-    background-color: var(--color-highlight-blue);
+    background-color: var(--color-secondary);
 }
 
 /* Form Success */
@@ -194,7 +195,7 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--color-highlight-blue);
+    border-color: var(--color-secondary);
     box-shadow: 0 0 0 2px rgba(36, 94, 138, 0.1);
 }
 
@@ -204,7 +205,7 @@ textarea {
 }
 
 button.btn {
-    background-color: var(--color-highlight-blue);
+    background-color: var(--color-secondary);
     color: var(--color-white);
     border: none;
     border-radius: 4px;

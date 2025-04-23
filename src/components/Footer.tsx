@@ -60,8 +60,8 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="footer-column">
                         <h4>Contact Us</h4>
-                        <p>Email: info@teamwmc.com</p>
-                        <p>Phone: (123) 456-7890</p>
+                        <p>Email: navi.chhabra@gmail.com</p>
+                        <p>Phone: (202) 556-3399</p>
                     </div>
                 </div>
             </div>

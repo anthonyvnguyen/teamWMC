@@ -294,7 +294,7 @@
     border-radius: 50%;
     margin-bottom: 20px;
     object-fit: cover;
-    border: 8px solid rgba(255, 255, 255, 0.8);
+    border: 8px solid var(--color-secondary);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
@@ -302,7 +302,7 @@
 .ceo-profile:hover .ceo-image {
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(207, 184, 124, 0.3);
-    border-color: rgba(255, 255, 255, 1);
+    border-color: var(--color-secondary-light);
 }
 
 .ceo-name {
@@ -316,7 +316,7 @@
     font-size: 18px;
     color: var(--color-text-medium);
     padding: 6px 16px;
-    background: var(--color-light);
+    background: var(--color-secondary);
     border-radius: 30px;
     display: inline-block;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
