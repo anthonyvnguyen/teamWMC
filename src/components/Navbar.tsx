@@ -9,12 +9,12 @@ import sbaLogo from "../assets/images/sba_logo_white.png";
 const Navbar: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1105);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1200);
 
     // Handle window resize
     useEffect(() => {
         const handleResize = () => {
-            const mobile = window.innerWidth <= 1105;
+            const mobile = window.innerWidth <= 1200;
             setIsMobile(mobile);
 
             if (!mobile) {

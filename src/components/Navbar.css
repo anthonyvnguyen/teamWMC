@@ -83,7 +83,7 @@
     font-family: "Inter", sans-serif;
     color: var(--color-text-light);
     cursor: pointer;
-    line-height: 0.6;
+    line-height: 0.0;
     padding: 10px 0;
     vertical-align: middle;
 }
@@ -268,7 +268,7 @@
     }
 }
 
-@media (max-width: 1105px) {
+@media (max-width: 1200px) {
     .navbar {
         padding: 12px 0;
     }
