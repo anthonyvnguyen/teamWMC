@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/teamWMC/static/css/main.02b16b8d.css",
+    "main.css": "/teamWMC/static/css/main.4cb327e2.css",
     "main.js": "/teamWMC/static/js/main.219b4f3c.js",
     "static/js/453.2db569a6.chunk.js": "/teamWMC/static/js/453.2db569a6.chunk.js",
     "static/media/ehrd.png": "/teamWMC/static/media/ehrd.43a993991a9170a3da52.png",
@@ -12,12 +12,12 @@
     "static/media/navi.jpeg": "/teamWMC/static/media/navi.608a6d04e5dd2310b314.jpeg",
     "static/media/sba_logo_white.png": "/teamWMC/static/media/sba_logo_white.12945a157e5d8c2c295e.png",
     "index.html": "/teamWMC/index.html",
-    "main.02b16b8d.css.map": "/teamWMC/static/css/main.02b16b8d.css.map",
+    "main.4cb327e2.css.map": "/teamWMC/static/css/main.4cb327e2.css.map",
     "main.219b4f3c.js.map": "/teamWMC/static/js/main.219b4f3c.js.map",
     "453.2db569a6.chunk.js.map": "/teamWMC/static/js/453.2db569a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02b16b8d.css",
+    "static/css/main.4cb327e2.css",
     "static/js/main.219b4f3c.js"
   ]
 }
