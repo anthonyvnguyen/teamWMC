@@ -43,13 +43,16 @@
     --color-highlight-purple: #7d5fff;
     --color-highlight-purple-light: #f6f4ff; /* Light purple background */
     --color-highlight-purple-dark: #6c5ce7; /* Darker purple */
+    --color-highlight-purple-mature: #4834b8; /* More mature purple background */
     --color-highlight-blue: #245e8a;
     --color-highlight-blue-light: #e6f7ff; /* Light blue background */
     --color-highlight-blue-dark: #1a4c75; /* Darker blue */
     --color-highlight-blue-darkest: #2980b9; /* Deepest blue */
+    --color-highlight-blue-mature: #1a4262; /* More mature blue background */
     --color-highlight-green: #2ecc71;
     --color-highlight-green-light: #e6fff0; /* Light green background */
-    --color-highlight-green-dark: #27ae60; /* Darker green */
+    --color-highlight-green-dark: #299657; /* Darker green */
+    --color-highlight-green-mature: #1e7245; /* More mature green background */
 
     /* UI colors */
     --color-success: #4caf50;
