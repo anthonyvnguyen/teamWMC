@@ -2,11 +2,11 @@
 
 /* Hero Section */
 .cyber-hero {
-    background-color: #f9f9f9;
+    background-color: var(--color-light);
     background-image: linear-gradient(
         to right,
-        rgba(74, 44, 107, 0.05),
-        rgba(74, 44, 107, 0.1)
+        var(--color-light-border),
+        rgba(0, 0, 0, 0.05)
     );
     padding: 80px 80px;
     position: relative;
@@ -30,6 +30,7 @@
     margin-bottom: 16px;
     line-height: 1.2;
     letter-spacing: -0.5px;
+    color: var(--color-black);
 }
 
 .cyber-hero-content p {
@@ -50,14 +51,20 @@
 .cyber-hero-image svg {
     width: 150px;
     height: 150px;
-    color: #4a2c6b;
+    color: var(--color-primary-light); /* Red color for cybersecurity icon */
 }
 
 /* Cyber Services Section */
 .cyber-services {
-    background: linear-gradient(to bottom right, #d8d0e0, #4a2c6b);
+    background: linear-gradient(
+        to bottom right,
+        var(--color-light),
+        var(--color-light-gray)
+    );
     padding: 80px 20px;
-    color: #fff;
+    color: var(--color-text-dark);
+    border-top: 1px solid var(--color-light-border);
+    border-bottom: 1px solid var(--color-light-border);
 }
 
 .cyber-services-container {
@@ -77,6 +84,7 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-primary-light); /* Red for headers */
 }
 
 .cyber-services-header h2::after {
@@ -87,7 +95,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--color-primary-light); /* Red accent */
 }
 
 .cyber-services-header p {
@@ -103,8 +111,9 @@
     gap: 30px;
 }
 
-.service-card {
-    background: rgba(255, 255, 255, 0.1);
+/* Service card styling for cyber page */
+.cyber-services .service-card {
+    background: var(--color-white);
     border-radius: 12px;
     padding: 30px;
     display: flex;
@@ -112,42 +121,51 @@
     gap: 20px;
     height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px var(--color-light-shadow);
+    border: 1px solid var(--color-light-border);
 }
 
-.service-card:hover {
+.cyber-services .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px var(--color-medium-shadow);
 }
 
-.service-icon {
+.cyber-services .service-icon {
     min-width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.service-icon svg {
+.cyber-services .service-icon svg {
     width: 40px;
     height: 40px;
-    stroke: #fff;
+    stroke: var(--color-primary-light); /* Red for service icons */
 }
 
-.service-content h3 {
+.cyber-services .service-content h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
     line-height: 1.2;
+    color: var(--color-primary-light); /* Red for service titles */
 }
 
-.service-content p {
+.cyber-services .service-content p {
     font-size: 16px;
     line-height: 1.5;
+    color: var(--color-text-dark);
 }
 
-/* Security Approach Section */
+/* Security Approach Section - Blue Theme */
 .cyber-approach {
+    background-color: var(
+        --color-highlight-blue-light
+    ); /* Light blue background */
     padding: 80px 20px;
-    background-color: #fff;
+    color: var(--color-text-dark);
+    border-top: 1px solid rgba(52, 152, 219, 0.1);
+    border-bottom: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 .cyber-approach-container {
@@ -156,8 +174,8 @@
 }
 
 .cyber-approach-header {
-    text-align: center;
     margin-bottom: 60px;
+    text-align: center;
 }
 
 .cyber-approach-header h2 {
@@ -167,6 +185,7 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-highlight-blue); /* Blue for headers */
 }
 
 .cyber-approach-header h2::after {
@@ -177,7 +196,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #4a2c6b;
+    background-color: var(--color-highlight-blue); /* Blue accent */
 }
 
 .cyber-approach-header p {
@@ -185,32 +204,37 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    color: var(--color-text-dark);
 }
 
 .approach-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    margin-top: 0;
 }
 
 .approach-step {
-    background-color: #f9f9f9;
+    background-color: var(--color-white);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 .approach-step:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.3);
 }
 
 .step-number {
     width: 60px;
     height: 60px;
-    background-color: #4a2c6b;
-    color: #fff;
+    background-color: var(--color-highlight-blue); /* Blue background */
+    color: var(--color-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -224,41 +248,20 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
+    color: var(--color-highlight-blue-darkest); /* Blue for titles */
 }
 
 .approach-step p {
     font-size: 16px;
-    color: #555;
     line-height: 1.5;
-}
-
-.approach-step.cyber-tech-card {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 4px solid #4a2c6b !important;
-}
-
-.approach-step.cyber-tech-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.approach-step.cyber-tech-card h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #4a2c6b !important;
+    color: var(--color-text-dark);
 }
 
 /* Benefits Section */
 .cyber-benefits {
-    background: linear-gradient(to right, #f9f9f9, #f2f2f2);
+    background-color: var(--color-dark); /* Softer black background */
+    color: var(--color-white);
     padding: 80px 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cyber-benefits-container {
@@ -278,6 +281,15 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-white);
+}
+
+.cyber-benefits-header h2 .highlight-red {
+    color: var(--color-highlight-red); /* Red for "Benefits" */
+}
+
+.cyber-benefits-header h2 .highlight-gold {
+    color: var(--color-secondary); /* Gold for highlights */
 }
 
 .cyber-benefits-header h2::after {
@@ -288,7 +300,9 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #4a2c6b;
+    background-color: var(
+        --color-secondary
+    ); /* Gold accent on dark background */
 }
 
 .cyber-benefits-header p {
@@ -296,46 +310,48 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    color: var(--color-light-text);
 }
 
 .benefits-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .cyber-benefit-card {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid #4a2c6b !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cyber-benefit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(207, 184, 124, 0.2); /* Gold shadow */
+    border-color: rgba(207, 184, 124, 0.3); /* Enhanced gold border */
 }
 
 .cyber-benefit-card h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #4a2c6b !important;
+    color: var(--color-secondary); /* Gold for benefit titles */
 }
 
 .cyber-benefit-card p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: var(--color-light-text);
 }
 
 /* Success Stories Section */
 .cyber-success {
     padding: 80px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-medium-border);
 }
 
 .cyber-success-container {
@@ -359,6 +375,7 @@
     margin-bottom: 24px;
     line-height: 1.2;
     position: relative;
+    color: var(--color-primary-light); /* Red for headers */
 }
 
 .cyber-success-content h2::after {
@@ -368,7 +385,7 @@
     left: 0;
     width: 60px;
     height: 3px;
-    background-color: #4a2c6b;
+    background-color: var(--color-primary-light); /* Red accent */
 }
 
 .cyber-success-content p {
@@ -399,31 +416,132 @@
 
 .cyber-testimonials .testimonial-card {
     margin: 0 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Technologies Section with Blue Theme */
+.cyber-tech {
+    padding: 80px 20px;
+    background-color: var(
+        --color-highlight-blue-light
+    ); /* Light blue background */
+    border-bottom: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.cyber-tech-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.cyber-tech-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cyber-tech-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+    color: var(
+        --color-primary-light
+    ); /* Keeping red for headers to maintain consistency */
+}
+
+.cyber-tech-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-highlight-blue); /* Blue accent line */
+}
+
+.cyber-tech-header p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-dark);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Tech cards specific to cyber page */
+.cyber-tech .cyber-tech-card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.cyber-tech .cyber-tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.cyber-tech .cyber-tech-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.cyber-tech .cyber-tech-icon svg {
+    width: 60px;
+    height: 60px;
+    color: var(--color-highlight-blue); /* Blue for tech icons */
+    stroke: var(
+        --color-highlight-blue
+    ); /* Ensure stroke color is also set to blue */
+}
+
+.cyber-tech .cyber-tech-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--color-highlight-blue-darkest); /* Blue for tech card titles */
+}
+
+.cyber-tech .cyber-tech-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-dark);
 }
 
 /* Contact Section */
 .cyber-contact {
+    background-color: var(--color-light);
     padding: 80px 20px;
-    background: linear-gradient(
-            to right,
-            rgba(74, 44, 107, 0.9),
-            rgba(40, 42, 51, 0.8)
-        ),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="rgba(37, 22, 53, 0.1)"/></svg>');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-light),
+        var(--color-medium-gray)
+    );
 }
 
 .cyber-contact-container {
     max-width: 1280px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .cyber-contact-content {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -438,12 +556,13 @@
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 32px;
+    color: var(--color-dark);
 }
 
 .cyber-contact-buttons {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -453,24 +572,17 @@
     .cyber-success-container {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        gap: 40px;
     }
 
     .cyber-hero-content,
     .cyber-success-content {
-        max-width: 100%;
-        margin-bottom: 30px;
+        text-align: center;
     }
 
     .cyber-success-content h2::after {
         left: 50%;
         transform: translateX(-50%);
-    }
-
-    .step-number {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
     }
 }
 
@@ -483,46 +595,59 @@
         font-size: 18px;
     }
 
-    .cyber-services-header h2,
     .cyber-approach-header h2,
+    .cyber-tech-header h2,
     .cyber-benefits-header h2,
+    .cyber-success-content h2,
     .cyber-contact-content h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
-    .cyber-services-header p,
     .cyber-approach-header p,
+    .cyber-tech-header p,
     .cyber-benefits-header p,
+    .cyber-success-content p,
     .cyber-contact-content p {
         font-size: 16px;
     }
 
-    .service-card,
-    .approach-step.cyber-tech-card,
+    .step-card,
     .cyber-benefit-card {
-        padding: 20px;
+        padding: 24px;
     }
 }
 
 @media (max-width: 480px) {
     .cyber-hero-content h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .cyber-hero-content p {
         font-size: 16px;
     }
 
-    .cyber-services,
     .cyber-approach,
+    .cyber-tech,
     .cyber-benefits,
+    .cyber-success,
     .cyber-contact {
-        padding: 60px 20px;
+        padding: 60px 16px;
     }
 
-    .cyber-services-grid,
     .approach-steps,
+    .tech-grid,
     .benefits-list {
         grid-template-columns: 1fr;
     }
+}
+
+/* Special highlight classes */
+.highlight-gold {
+    color: var(--color-secondary); /* Gold color for Cloud */
+    font-weight: 700;
+}
+
+.highlight-red {
+    color: var(--color-primary-light); /* Red color */
+    font-weight: 600;
 }

@@ -25,8 +25,9 @@ const CloudSolutions = () => {
                         <div className="cloud-hero-content">
                             <h1>
                                 Unleash the Full Potential of the{" "}
-                                <span className="blue-highlight">Cloud</span>
+                                <span className="highlight-red">Cloud</span>
                             </h1>
+
                             <p>
                                 Secure, Scalable, and Future-Ready Cloud
                                 Solutions for Your Business
@@ -504,10 +505,6 @@ const CloudSolutions = () => {
                                 <Link
                                     to="/about"
                                     className="btn secondary-btn"
-                                    style={{
-                                        background: "rgba(255,255,255,0.1)",
-                                        color: "#fff",
-                                    }}
                                     onClick={scrollToTop}
                                 >
                                     Learn More

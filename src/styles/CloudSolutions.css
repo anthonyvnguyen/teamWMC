@@ -2,11 +2,11 @@
 
 /* Hero Section */
 .cloud-hero {
-    background-color: #f9f9f9;
+    background-color: var(--color-light);
     background-image: linear-gradient(
         to right,
-        rgba(36, 94, 138, 0.05),
-        rgba(36, 94, 138, 0.1)
+        rgba(0, 0, 0, 0.02),
+        rgba(0, 0, 0, 0.05)
     );
     padding: 80px 80px;
     position: relative;
@@ -30,6 +30,7 @@
     margin-bottom: 16px;
     line-height: 1.2;
     letter-spacing: -0.5px;
+    color: var(--color-black);
 }
 
 .cloud-hero-content p {
@@ -50,14 +51,20 @@
 .cloud-hero-image svg {
     width: 150px;
     height: 150px;
-    color: #245e8a;
+    color: var(--color-primary); /* Red color for cloud icon */
 }
 
 /* Cloud Services Section */
 .cloud-services {
-    background: linear-gradient(to bottom right, #c8d6e0, #245e8a);
+    background: linear-gradient(
+        to bottom right,
+        var(--color-light),
+        var(--color-light-gray)
+    );
     padding: 80px 20px;
-    color: #fff;
+    color: var(--color-text-dark);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cloud-services-container {
@@ -77,6 +84,7 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-primary); /* Red for headers */
 }
 
 .cloud-services-header h2::after {
@@ -87,7 +95,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--color-primary); /* Red accent */
 }
 
 .cloud-services-header p {
@@ -104,7 +112,7 @@
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--color-white);
     border-radius: 12px;
     padding: 30px;
     display: flex;
@@ -112,6 +120,8 @@
     gap: 20px;
     height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .service-card:hover {
@@ -119,35 +129,38 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.service-icon {
+/* Service icon styling specific to cloud page */
+.cloud-services .service-icon {
     min-width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.service-icon svg {
+.cloud-services .service-icon svg {
     width: 40px;
     height: 40px;
-    stroke: #fff;
+    stroke: var(--color-primary); /* Red for service icons */
 }
 
-.service-content h3 {
+.cloud-services .service-content h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
     line-height: 1.2;
+    color: var(--color-primary); /* Red for service titles */
 }
 
-.service-content p {
+.cloud-services .service-content p {
     font-size: 16px;
     line-height: 1.5;
+    color: var(--color-text-dark);
 }
 
 /* Cloud Success Stories */
 .cloud-success {
     padding: 80px 20px;
-    background-color: #fff;
+    background-color: var(--color-white);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -172,6 +185,7 @@
     margin-bottom: 24px;
     line-height: 1.2;
     position: relative;
+    color: var(--color-primary); /* Red for headers */
 }
 
 .cloud-success-content h2::after {
@@ -181,7 +195,7 @@
     left: 0;
     width: 60px;
     height: 3px;
-    background-color: #245e8a;
+    background-color: var(--color-primary); /* Red accent */
 }
 
 .cloud-success-content p {
@@ -212,13 +226,17 @@
 
 .cloud-testimonials .testimonial-card {
     margin: 0 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 /* Cloud Technology Section */
 .cloud-tech {
     padding: 80px 20px;
-    background: linear-gradient(to right, #f9f9f9, #f2f2f2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(
+        --color-highlight-purple-light
+    ); /* Light purple background */
+    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
 }
 
 .cloud-tech-container {
@@ -238,6 +256,7 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-highlight-purple); /* Purple for headers */
 }
 
 .cloud-tech-header h2::after {
@@ -248,7 +267,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #245e8a;
+    background-color: var(--color-highlight-purple); /* Purple accent line */
 }
 
 .cloud-tech-header p {
@@ -256,54 +275,66 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    color: var(--color-text-dark);
 }
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.cloud-tech-card {
-    background-color: #fff;
+/* Tech cards specific to cloud page */
+.cloud-tech .cloud-tech-card {
+    background-color: var(--color-white);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 4px solid #245e8a !important;
+    border: 1px solid rgba(108, 92, 231, 0.1);
 }
 
-.cloud-tech-card:hover {
+.cloud-tech .cloud-tech-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(108, 92, 231, 0.15);
+    border-color: rgba(108, 92, 231, 0.3);
 }
 
-.cloud-tech-icon {
+.cloud-tech .cloud-tech-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.cloud-tech .cloud-tech-icon svg {
     width: 60px;
     height: 60px;
-    margin: 0 auto 20px;
-    color: #245e8a !important;
+    color: var(--color-highlight-purple); /* Purple for tech icons */
+    stroke: var(
+        --color-highlight-purple
+    ); /* Ensure stroke color is also set to purple */
 }
 
-.cloud-tech-card h3 {
+.cloud-tech .cloud-tech-card h3 {
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 12px;
-    color: #245e8a !important;
+    margin-bottom: 16px;
+    color: var(--color-highlight-purple-dark); /* Purple for tech card titles */
 }
 
-.cloud-tech-card p {
+.cloud-tech .cloud-tech-card p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: var(--color-text-dark);
 }
 
-/* Benefits Section */
 .cloud-benefits {
+    background-color: var(--color-dark); /* Softer black background */
+    color: var(--color-text-light);
     padding: 80px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cloud-benefits-container {
@@ -323,6 +354,15 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-text-light);
+}
+
+.cloud-benefits-header h2 .highlight-red {
+    color: var(--color-highlight-red); /* Red for "Benefits" */
+}
+
+.cloud-benefits-header h2 .highlight-gold {
+    color: var(--color-secondary); /* Gold for "Cloud" */
 }
 
 .cloud-benefits-header h2::after {
@@ -333,7 +373,9 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #245e8a;
+    background-color: var(
+        --color-secondary
+    ); /* Gold accent on dark background */
 }
 
 .cloud-benefits-header p {
@@ -341,64 +383,70 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cloud-benefits-header p .highlight-gold {
+    color: var(--color-secondary); /* Gold color */
+}
+
+.cloud-benefits-header p .highlight-red {
+    color: var(--color-highlight-red); /* Red color */
 }
 
 .benefits-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .cloud-benefit-card {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid #245e8a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cloud-benefit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(207, 184, 124, 0.2); /* Gold shadow */
+    border-color: rgba(207, 184, 124, 0.3); /* Enhanced gold border */
 }
 
 .cloud-benefit-card h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #245e8a !important;
+    color: var(--color-secondary); /* Gold for benefit titles */
 }
 
 .cloud-benefit-card p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: var(--color-light-text);
 }
 
-/* Cloud Contact Section */
+.cloud-benefit-card .highlight-red {
+    color: var(--color-highlight-red); /* Red color */
+    font-weight: 600;
+}
+
 .cloud-contact {
+    background-color: var(--color-light);
     padding: 80px 20px;
-    background: linear-gradient(
-            to right,
-            rgba(36, 94, 138, 0.9),
-            rgba(40, 42, 51, 0.8)
-        ),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="rgba(18, 47, 69, 0.1)"/></svg>');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--color-light), #e5e5e5);
 }
 
 .cloud-contact-container {
     max-width: 1280px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .cloud-contact-content {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -413,28 +461,27 @@
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 32px;
+    color: var(--color-dark);
 }
 
 .cloud-contact-buttons {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
     .cloud-hero-container,
     .cloud-success-container {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        gap: 40px;
     }
 
     .cloud-hero-content,
     .cloud-success-content {
-        max-width: 100%;
-        margin-bottom: 30px;
+        text-align: center;
     }
 
     .cloud-success-content h2::after {
@@ -457,7 +504,7 @@
     .cloud-benefits-header h2,
     .cloud-success-content h2,
     .cloud-contact-content h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .cloud-services-header p,
@@ -469,15 +516,14 @@
     }
 
     .service-card,
-    .cloud-tech-card,
     .cloud-benefit-card {
-        padding: 20px;
+        padding: 24px;
     }
 }
 
 @media (max-width: 480px) {
     .cloud-hero-content h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .cloud-hero-content p {
@@ -489,7 +535,7 @@
     .cloud-benefits,
     .cloud-success,
     .cloud-contact {
-        padding: 60px 20px;
+        padding: 60px 16px;
     }
 
     .cloud-services-grid,

@@ -1,5 +1,5 @@
 .footer {
-    background-color: #1a2b3c;
+    background-color: #871d23;
     color: #fff;
     padding: 40px 20px 20px;
 }
@@ -59,7 +59,7 @@
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: #3d85c6;
+    background-color: #cfb87c;
 }
 
 .footer-column ul {
@@ -74,13 +74,13 @@
 }
 
 .footer-column a {
-    color: #ccc;
+    color: #f0e6c3;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .footer-column a:hover {
-    color: #fff;
+    color: #cfb87c;
 }
 
 /* NAICS codes styling for a single-line layout */

@@ -25,7 +25,7 @@ const Networking = () => {
                         <div className="networking-hero-content">
                             <h1>
                                 Advanced{" "}
-                                <span className="green-highlight">
+                                <span className="highlight-red">
                                     Networking
                                 </span>{" "}
                                 Solutions
@@ -536,10 +536,6 @@ const Networking = () => {
                                 <Link
                                     to="/about"
                                     className="btn secondary-btn"
-                                    style={{
-                                        background: "rgba(255,255,255,0.1)",
-                                        color: "#fff",
-                                    }}
                                     onClick={scrollToTop}
                                 >
                                     Learn More

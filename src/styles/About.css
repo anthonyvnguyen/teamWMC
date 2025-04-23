@@ -1,10 +1,10 @@
 .about-hero {
-    background-color: #f9f9f9;
+    background-color: var(--color-light);
     padding: 100px 80px;
     background-image: linear-gradient(
-        to right,
-        rgba(36, 94, 138, 0.05),
-        rgba(36, 94, 138, 0.2)
+        to bottom,
+        #e4d6b2,
+        var(--color-gold-border)
     );
 }
 
@@ -33,7 +33,7 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #245e8a;
+    background-color: var(--color-secondary);
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -47,8 +47,8 @@
 }
 
 .about-hero-logo {
-    width: 180px;
-    height: 180px;
+    width: 270px;
+    height: 270px;
 }
 
 .about-section {
@@ -65,8 +65,8 @@
 
 /* Who We Are Section */
 .who-we-are {
-    background-color: #245e8a;
-    color: white;
+    background-color: var(--color-blue-medium);
+    color: var(--color-text-light);
     padding: 80px 80px;
     position: relative;
     overflow: hidden;
@@ -97,7 +97,7 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #fff;
+    background-color: var(--color-gold-border);
     margin-top: 20px;
 }
 
@@ -122,9 +122,9 @@
 /* Our Mission Section */
 .our-mission {
     padding: 80px 80px;
-    background-color: #fff;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-medium-border);
+    border-bottom: 1px solid var(--color-medium-border);
 }
 
 .our-mission-container {
@@ -153,14 +153,14 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #245e8a;
+    background-color: var(--color-gold-border);
     margin-top: 20px;
 }
 
 .our-mission p {
     font-size: 18px;
     line-height: 1.5;
-    color: #000;
+    color: var(--color-black);
 }
 
 .mission-values {
@@ -184,7 +184,11 @@
 /* Meet Our CEO Section */
 .meet-ceo {
     padding: 80px 80px;
-    background: linear-gradient(to right, #2b629d, #fff);
+    background: linear-gradient(
+        to right,
+        var(--color-gold-border),
+        var(--color-white)
+    );
 }
 
 .meet-ceo-container {
@@ -204,7 +208,7 @@
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 24px;
-    color: white;
+    color: var(--color-dark);
     letter-spacing: -0.02em;
     position: relative;
 }
@@ -214,14 +218,14 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #fff;
+    background-color: var(--color-secondary);
     margin-top: 20px;
 }
 
 .meet-ceo p {
     font-size: 18px;
     line-height: 1.5;
-    color: white;
+    color: var(--color-dark);
 }
 
 .ceo-profile {
@@ -248,17 +252,21 @@
 
 .ceo-title {
     font-size: 18px;
-    color: #000;
+    color: var(--color-black);
 }
 
 /* About Contact Section */
 .about-contact {
-    background-color: #245e8a;
-    color: white;
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient(to right, #245e8a, #2b629d);
+    background-image: linear-gradient(
+        to right,
+        var(--color-secondary),
+        #aa9664
+    );
 }
 
 .about-contact-container {
@@ -278,14 +286,14 @@
     font-weight: 600;
     margin-bottom: 40px;
     letter-spacing: -0.02em;
-    color: white;
+    color: var(--color-text-dark);
 }
 
 .about-contact p {
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 40px;
-    color: white;
+    color: var(--color-text-dark);
 }
 
 /* Media Queries */
@@ -462,6 +470,67 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #245e8a;
+    background-color: var(--color-primary);
     margin: 20px auto;
+}
+
+/* CTA Section styling for "Our Commitment" */
+.cta-section {
+    background-color: var(--color-light);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--color-light-shadow);
+}
+
+.cta-container h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--color-text-dark);
+    position: relative;
+}
+
+.cta-container h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-primary-light); /* Red underline */
+    margin: 20px auto;
+}
+
+.cta-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: var(--color-text-medium);
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        padding: 40px 20px;
+    }
+
+    .cta-container h2 {
+        font-size: 28px;
+    }
+
+    .cta-container p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-container {
+        padding: 30px 15px;
+    }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styles/global.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
@@ -19,17 +20,17 @@ function App() {
     return (
         <div className="App">
             <Navbar />
-            <main className="main-content">
-                <section className="hero-section">
-                    <div className="hero-container">
-                        <h1 className="hero-title">
+            <main className="app-main-content">
+                <section className="app-hero-section">
+                    <div className="app-hero-container">
+                        <h1 className="app-hero-title">
                             Transforming{" "}
-                            <span className="blue-highlight">Digital</span>{" "}
+                            <span className="highlight-red">Digital</span>{" "}
                             Landscapes with{" "}
-                            <span className="blue-highlight">Innovative</span>{" "}
+                            <span className="highlight-red">Innovative</span>{" "}
                             Solutions
                         </h1>
-                        <p className="hero-description">
+                        <p className="app-hero-description">
                             Team WMC is an all-in-one digital solutions provider
                             for your business, offering cloud, cyber security,
                             and networking solutions.
@@ -53,14 +54,14 @@ function App() {
                     </div>
                 </section>
 
-                <section className="featured-solutions-section">
-                    <div className="featured-solutions-container">
-                        <h2 className="section-title">
+                <section className="app-solutions-section">
+                    <div className="app-solutions-container">
+                        <h2 className="app-section-title">
                             Empowering Secure Digital Transformation
                         </h2>
-                        <div className="solutions-grid">
-                            <div className="solution-tile">
-                                <div className="solution-icon cloud-icon">
+                        <div className="app-solutions-grid">
+                            <div className="app-solution-tile">
+                                <div className="app-solution-icon app-cloud-icon">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -83,14 +84,14 @@ function App() {
                                 </p>
                                 <Link
                                     to="/cloud"
-                                    className="learn-more-link"
+                                    className="app-learn-more-link"
                                     onClick={scrollToTop}
                                 >
-                                    <span className="arrow">→</span>
+                                    <span className="app-arrow">→</span>
                                 </Link>
                             </div>
-                            <div className="solution-tile">
-                                <div className="solution-icon security-icon">
+                            <div className="app-solution-tile">
+                                <div className="app-solution-icon app-security-icon">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -113,14 +114,14 @@ function App() {
                                 </p>
                                 <Link
                                     to="/security"
-                                    className="learn-more-link"
+                                    className="app-learn-more-link"
                                     onClick={scrollToTop}
                                 >
-                                    <span className="arrow">→</span>
+                                    <span className="app-arrow">→</span>
                                 </Link>
                             </div>
-                            <div className="solution-tile">
-                                <div className="solution-icon network-icon">
+                            <div className="app-solution-tile">
+                                <div className="app-solution-icon app-network-icon">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -170,19 +171,19 @@ function App() {
                                 </p>
                                 <Link
                                     to="/networking"
-                                    className="learn-more-link"
+                                    className="app-learn-more-link"
                                     onClick={scrollToTop}
                                 >
-                                    <span className="arrow">→</span>
+                                    <span className="app-arrow">→</span>
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="why-us-section">
-                    <div className="why-us-container">
-                        <div className="why-us-text">
+                <section className="app-why-us-section">
+                    <div className="app-why-us-container">
+                        <div className="app-why-us-text">
                             <h2>Why Choose Team WMC?</h2>
                             <p>
                                 We deliver tailored solutions with exceptional
@@ -190,22 +191,22 @@ function App() {
                                 brings deep technical knowledge and a
                                 client-focused approach to every project.
                             </p>
-                            <ul className="benefits-list">
+                            <ul className="app-benefits-list">
                                 <li>
-                                    <span className="check-mark">✓</span>
+                                    <span className="app-check-mark">✓</span>
                                     Expert consultants with industry
                                     certifications
                                 </li>
                                 <li>
-                                    <span className="check-mark">✓</span>
+                                    <span className="app-check-mark">✓</span>
                                     Customized solutions for your specific needs
                                 </li>
                                 <li>
-                                    <span className="check-mark">✓</span>
+                                    <span className="app-check-mark">✓</span>
                                     Comprehensive support and reliable service
                                 </li>
                                 <li>
-                                    <span className="check-mark">✓</span>
+                                    <span className="app-check-mark">✓</span>
                                     Proven track record of successful
                                     deployments
                                 </li>
@@ -218,44 +219,44 @@ function App() {
                                 About Us
                             </Link>
                         </div>
-                        <div className="why-us-image">
-                            <div className="logo-container">
+                        <div className="app-why-us-image">
+                            <div className="app-logo-container">
                                 <img
                                     src={wmcLogo}
                                     alt="Team WMC Logo"
-                                    className="wmc-logo-large"
+                                    className="app-wmc-logo-large"
                                 />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="stats-section">
+                <section className="app-stats-section">
                     <h2>Meet Team WMC</h2>
-                    <div className="stats-container">
-                        <div className="stat-item">
+                    <div className="app-stats-container">
+                        <div className="app-stat-item">
                             <h3>200+</h3>
                             <p>Successful Security Implementations</p>
                         </div>
-                        <div className="stat-item">
+                        <div className="app-stat-item">
                             <h3>40+</h3>
                             <p>Certified Experts</p>
                         </div>
-                        <div className="stat-item">
+                        <div className="app-stat-item">
                             <h3>40+</h3>
                             <p>Successful Cloud Implementations</p>
                         </div>
                     </div>
                 </section>
-                <section className="testimonials-section">
+                <section className="app-testimonials-section">
                     <TestimonialsCarousel
                         testimonialIds={testimonialIds}
                         title="A Trusted Partner in Security: Our Customer Success Stories"
                     />
                 </section>
 
-                <section className="cta-section">
-                    <div className="cta-container">
+                <section className="app-cta-section">
+                    <div className="app-cta-container">
                         <h2>Ready to Transform Your Digital Infrastructure?</h2>
                         <p>
                             Contact us today to discuss how our solutions can

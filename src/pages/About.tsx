@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/About.css";
-import wmcLogo from "../assets/images/wmc_logo_black.png";
+import wmcLogo from "../assets/images/wmc_logo.png";
 import naviImage from "../assets/images/navi.jpeg";
 import americanFlag from "../assets/images/american_flag.jpeg";
 import ctgTechImage from "../assets/images/ctg_tech.jpg";
@@ -24,7 +24,9 @@ const About = () => {
                 <section className="about-hero">
                     <div className="about-hero-container">
                         <div className="about-hero-text">
-                            <h1>About Team WMC</h1>
+                            <h1>
+                                About TEAM WMC
+                            </h1>
                             <p>Your Partner in Digital Transformations</p>
                         </div>
                         <img

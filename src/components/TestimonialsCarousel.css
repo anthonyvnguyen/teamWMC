@@ -25,7 +25,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #245e8a;
+    background-color: #d71e28;
 }
 
 .testimonials-carousel {
@@ -169,12 +169,12 @@
     cursor: pointer;
     z-index: 20;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    color: #245e8a;
+    color: #d71e28;
     transition: all 0.3s ease;
 }
 
 .carousel-btn:hover:not(:disabled) {
-    background-color: #245e8a;
+    background-color: #d71e28;
     color: white;
     transform: translateY(-50%) scale(1.05);
 }
@@ -329,8 +329,8 @@
     font-size: 8px;
     font-weight: 600;
     text-transform: uppercase;
-    background-color: #f0f7ff;
-    color: #245e8a;
+    background-color: var(--color-secondary-lighter);
+    color: var(--color-secondary);
     padding: 3px 6px;
     border-radius: 3px;
     letter-spacing: 0.5px;
@@ -348,8 +348,8 @@
 .toggle-badge {
     font-size: 10px;
     font-weight: 600;
-    background-color: #245e8a;
-    color: white;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -365,13 +365,13 @@
     transform: translateX(-50%);
     z-index: 5;
     padding: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--color-light-shadow);
 }
 
 .toggle-badge:hover {
-    background-color: #1a4c75;
+    background-color: var(--color-secondary-dark);
     transform: translateX(-50%) translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 6px var(--color-medium-shadow);
 }
 
 .toggle-badge svg {
@@ -391,7 +391,7 @@
 /* Add spacing between badges and description */
 .card-content > p {
     margin-top: 20px;
-    color: #555;
+    color: var(--color-text-medium);
     font-style: italic;
     margin-bottom: 10px;
     line-height: 1.5;
@@ -399,7 +399,7 @@
 }
 
 .testimonial-author {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-silver);
     padding-top: 10px;
 }
 
@@ -407,7 +407,7 @@
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 2px;
-    color: #333;
+    color: var(--color-text-dark);
 }
 
 .testimonial-author h4::before {
@@ -418,7 +418,7 @@
 
 .testimonial-author p {
     font-size: 12px;
-    color: #666;
+    color: var(--color-text-muted);
     margin: 0;
     font-style: normal;
 }
@@ -443,7 +443,7 @@
 }
 
 .indicator.active {
-    background-color: #245e8a;
+    background-color: #d71e28;
     transform: scale(1.2);
 }
 

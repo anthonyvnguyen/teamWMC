@@ -25,7 +25,7 @@ const CyberSecurity = () => {
                         <div className="cyber-hero-content">
                             <h1>
                                 Comprehensive{" "}
-                                <span className="purple-highlight">
+                                <span className="highlight-red">
                                     Cyber Security
                                 </span>{" "}
                                 Solutions
@@ -298,7 +298,7 @@ const CyberSecurity = () => {
                         </div>
 
                         <div className="approach-steps">
-                            <div className="approach-step cyber-tech-card">
+                            <div className="approach-step">
                                 <div className="step-number">1</div>
                                 <h4>Assess</h4>
                                 <p>
@@ -307,7 +307,7 @@ const CyberSecurity = () => {
                                     current security posture.
                                 </p>
                             </div>
-                            <div className="approach-step cyber-tech-card">
+                            <div className="approach-step">
                                 <div className="step-number">2</div>
                                 <h4>Implement</h4>
                                 <p>
@@ -316,7 +316,7 @@ const CyberSecurity = () => {
                                     industry best practices.
                                 </p>
                             </div>
-                            <div className="approach-step cyber-tech-card">
+                            <div className="approach-step">
                                 <div className="step-number">3</div>
                                 <h4>Monitor</h4>
                                 <p>
@@ -325,7 +325,7 @@ const CyberSecurity = () => {
                                     incidents in real-time.
                                 </p>
                             </div>
-                            <div className="approach-step cyber-tech-card">
+                            <div className="approach-step">
                                 <div className="step-number">4</div>
                                 <h4>Evolve</h4>
                                 <p>
@@ -432,10 +432,6 @@ const CyberSecurity = () => {
                                 <Link
                                     to="/about"
                                     className="btn secondary-btn"
-                                    style={{
-                                        background: "rgba(255,255,255,0.1)",
-                                        color: "#fff",
-                                    }}
                                     onClick={scrollToTop}
                                 >
                                     Learn More

@@ -2,11 +2,11 @@
 
 /* Hero Section */
 .networking-hero {
-    background-color: #f9f9f9;
+    background-color: var(--color-light);
     background-image: linear-gradient(
         to right,
-        rgba(44, 118, 74, 0.05),
-        rgba(44, 118, 74, 0.1)
+        var(--color-light-border),
+        rgba(0, 0, 0, 0.05)
     );
     padding: 80px 80px;
     position: relative;
@@ -30,6 +30,7 @@
     margin-bottom: 16px;
     line-height: 1.2;
     letter-spacing: -0.5px;
+    color: var(--color-black);
 }
 
 .networking-hero-content p {
@@ -50,14 +51,20 @@
 .networking-hero-image svg {
     width: 150px;
     height: 150px;
-    color: #2c764a;
+    color: var(--color-primary-light); /* Red color for networking icon */
 }
 
 /* Networking Services Section */
 .networking-services {
-    background: linear-gradient(to bottom right, #c8e0d8, #2c764a);
+    background: linear-gradient(
+        to bottom right,
+        var(--color-light),
+        var(--color-light-gray)
+    );
     padding: 80px 20px;
-    color: #fff;
+    color: var(--color-text-dark);
+    border-top: 1px solid var(--color-light-border);
+    border-bottom: 1px solid var(--color-light-border);
 }
 
 .networking-services-container {
@@ -77,6 +84,7 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-primary-light); /* Red for headers */
 }
 
 .networking-services-header h2::after {
@@ -87,7 +95,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--color-primary-light); /* Red accent */
 }
 
 .networking-services-header p {
@@ -103,8 +111,9 @@
     gap: 30px;
 }
 
-.service-card {
-    background: rgba(255, 255, 255, 0.1);
+/* Service card styling for networking page */
+.networking-services .service-card {
+    background: var(--color-white);
     border-radius: 12px;
     padding: 30px;
     display: flex;
@@ -112,43 +121,47 @@
     gap: 20px;
     height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px var(--color-light-shadow);
+    border: 1px solid var(--color-light-border);
 }
 
-.service-card:hover {
+.networking-services .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px var(--color-medium-shadow);
 }
 
-.service-icon {
+.networking-services .service-icon {
     min-width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.service-icon svg {
+.networking-services .service-icon svg {
     width: 40px;
     height: 40px;
-    stroke: #fff;
+    stroke: var(--color-primary-light); /* Red for service icons */
 }
 
-.service-content h3 {
+.networking-services .service-content h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
     line-height: 1.2;
+    color: var(--color-primary-light); /* Red for service titles */
 }
 
-.service-content p {
+.networking-services .service-content p {
     font-size: 16px;
     line-height: 1.5;
+    color: var(--color-text-dark);
 }
 
 /* Success Stories Section */
 .networking-success {
     padding: 80px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-medium-border);
 }
 
 .networking-success-container {
@@ -172,6 +185,7 @@
     margin-bottom: 24px;
     line-height: 1.2;
     position: relative;
+    color: var(--color-primary-light); /* Red for headers */
 }
 
 .networking-success-content h2::after {
@@ -181,7 +195,7 @@
     left: 0;
     width: 60px;
     height: 3px;
-    background-color: #2c764a;
+    background-color: var(--color-primary-light); /* Red accent */
 }
 
 .networking-success-content p {
@@ -212,13 +226,17 @@
 
 .networking-testimonials .testimonial-card {
     margin: 0 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
-/* Technologies Section */
+/* Technologies Section with green Theme */
 .networking-tech {
     padding: 80px 20px;
-    background: linear-gradient(to right, #f9f9f9, #f2f2f2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(
+        --color-highlight-green-light
+    ); /* Light green background */
+    border-bottom: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 .networking-tech-container {
@@ -238,6 +256,7 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-highlight-green); /* green color */
 }
 
 .networking-tech-header h2::after {
@@ -248,7 +267,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #2c764a;
+    background-color: var(--color-highlight-green); /* green accent line */
 }
 
 .networking-tech-header p {
@@ -256,53 +275,67 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    color: #333;
 }
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.networking-tech-card {
-    background-color: #fff;
+/* Tech cards specific to networking page */
+.networking-tech .networking-tech-card {
+    background-color: var(--color-white);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 4px solid #2c764a !important;
+    border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
-.networking-tech-card:hover {
+.networking-tech .networking-tech-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.3);
 }
 
-.networking-tech-icon {
+.networking-tech .networking-tech-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.networking-tech .networking-tech-icon svg {
     width: 60px;
     height: 60px;
-    margin: 0 auto 20px;
-    color: #2c764a !important;
+    color: var(--color-highlight-green); /* green for tech icons */
+    stroke: var(
+        --color-highlight-green
+    ); /* Ensure stroke color is also set to green */
 }
 
-.networking-tech-card h3 {
+.networking-tech .networking-tech-card h3 {
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 12px;
-    color: #2c764a !important;
+    margin-bottom: 16px;
+    color: var(--color-highlight-green-darkest); /* green for tech card titles */
 }
 
-.tech-card p {
+.networking-tech .networking-tech-card p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: var(--color-text-dark);
 }
 
 /* Benefits Section */
 .networking-benefits {
+    background-color: var(--color-dark); /* Softer black background */
+    color: var(--color-white);
     padding: 80px 20px;
-    background-color: #fff;
 }
 
 .networking-benefits-container {
@@ -322,6 +355,15 @@
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    color: var(--color-white);
+}
+
+.networking-benefits-header h2 .highlight-red {
+    color: var(--color-highlight-red); /* Red for "Benefits" */
+}
+
+.networking-benefits-header h2 .highlight-gold {
+    color: var(--color-secondary); /* Gold for highlights */
 }
 
 .networking-benefits-header h2::after {
@@ -332,7 +374,9 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #2c764a;
+    background-color: var(
+        --color-secondary
+    ); /* Gold accent on dark background */
 }
 
 .networking-benefits-header p {
@@ -340,64 +384,63 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    color: var(--color-light-text);
 }
 
 .benefits-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .networking-benefit-card {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid #2c764a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .networking-benefit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(207, 184, 124, 0.2); /* Gold shadow */
+    border-color: rgba(207, 184, 124, 0.3); /* Enhanced gold border */
 }
 
 .networking-benefit-card h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #2c764a !important;
+    color: var(--color-secondary); /* Gold for benefit titles */
 }
 
 .networking-benefit-card p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
+    color: var(--color-light-text);
 }
 
 /* Contact Section */
 .networking-contact {
+    background-color: var(--color-light);
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-light),
+        var(--color-medium-gray)
+    );
+    color: var(--color-dark);
     padding: 80px 20px;
-    background: linear-gradient(
-            to right,
-            rgba(44, 118, 74, 0.9),
-            rgba(40, 42, 51, 0.8)
-        ),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="rgba(22, 59, 37, 0.1)"/></svg>');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #fff;
+    text-align: center;
 }
 
 .networking-contact-container {
     max-width: 1280px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .networking-contact-content {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -412,28 +455,27 @@
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 32px;
+    color: var(--color-dark);
 }
 
 .networking-contact-buttons {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
     .networking-hero-container,
     .networking-success-container {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        gap: 40px;
     }
 
     .networking-hero-content,
     .networking-success-content {
-        max-width: 100%;
-        margin-bottom: 30px;
+        text-align: center;
     }
 
     .networking-success-content h2::after {
@@ -456,7 +498,7 @@
     .networking-benefits-header h2,
     .networking-success-content h2,
     .networking-contact-content h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .networking-services-header p,
@@ -468,15 +510,14 @@
     }
 
     .service-card,
-    .networking-tech-card,
     .networking-benefit-card {
-        padding: 20px;
+        padding: 24px;
     }
 }
 
 @media (max-width: 480px) {
     .networking-hero-content h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .networking-hero-content p {
@@ -488,7 +529,7 @@
     .networking-benefits,
     .networking-success,
     .networking-contact {
-        padding: 60px 20px;
+        padding: 60px 16px;
     }
 
     .networking-services-grid,
@@ -496,4 +537,20 @@
     .benefits-list {
         grid-template-columns: 1fr;
     }
+}
+
+/* Special highlight classes */
+.highlight-gold {
+    color: var(--color-secondary); /* Gold color for Cloud */
+    font-weight: 700;
+}
+
+.highlight-red {
+    color: var(--color-highlight-red); /* Red color */
+    font-weight: 600;
+}
+
+.highlight-green {
+    color: var(--color-highlight-green); /* green color */
+    font-weight: 600;
 }
