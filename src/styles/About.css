@@ -1,11 +1,28 @@
 .about-hero {
-    background-color: var(--color-light);
+    background-color: var(--color-secondary-lighter);
     padding: 100px 80px;
     background-image: linear-gradient(
-        to bottom,
+        to right,
         #e4d6b2,
-        var(--color-gold-border)
+        var(--color-secondary-lighter)
     );
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(
+        to left,
+        rgba(207, 184, 124, 0.2),
+        transparent
+    );
+    z-index: 1;
 }
 
 .about-hero-container {
@@ -14,10 +31,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
 }
 
 .about-hero-text {
     text-align: left;
+    flex: 1;
+    max-width: 650px;
 }
 
 .about-hero h1 {
@@ -26,6 +47,7 @@
     margin-bottom: 16px;
     letter-spacing: -0.02em;
     position: relative;
+    color: var(--color-primary);
 }
 
 .about-hero h1::after {
@@ -39,16 +61,25 @@
 }
 
 .about-hero p {
-    font-size: 32px;
+    font-size: 24px;
     max-width: 600px;
     margin: 0;
-    color: rgba(0, 0, 0, 0.75);
-    font-weight: 700;
+    color: var(--color-text-dark);
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 .about-hero-logo {
     width: 270px;
     height: 270px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 8px 16px rgba(207, 184, 124, 0.3));
+    transition: transform 0.5s ease-in-out;
+}
+
+.about-hero-logo:hover {
+    transform: scale(1.05);
 }
 
 .about-section {
@@ -146,6 +177,7 @@
     margin-bottom: 24px;
     letter-spacing: -0.02em;
     position: relative;
+    color: var(--color-primary);
 }
 
 .our-mission h2::after {
@@ -153,14 +185,14 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: var(--color-gold-border);
+    background-color: var(--color-secondary);
     margin-top: 20px;
 }
 
 .our-mission p {
     font-size: 18px;
-    line-height: 1.5;
-    color: var(--color-black);
+    line-height: 1.7;
+    color: var(--color-text-dark);
 }
 
 .mission-values {
@@ -189,6 +221,25 @@
         var(--color-gold-border),
         var(--color-white)
     );
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.meet-ceo::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(
+        to left,
+        rgba(235, 234, 233, 0.6),
+        transparent
+    );
+    z-index: 1;
 }
 
 .meet-ceo-container {
@@ -198,6 +249,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .meet-ceo-content {
@@ -208,7 +261,7 @@
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 24px;
-    color: var(--color-dark);
+    color: var(--color-primary);
     letter-spacing: -0.02em;
     position: relative;
 }
@@ -224,8 +277,8 @@
 
 .meet-ceo p {
     font-size: 18px;
-    line-height: 1.5;
-    color: var(--color-dark);
+    line-height: 1.7;
+    color: var(--color-text-dark);
 }
 
 .ceo-profile {
@@ -236,23 +289,37 @@
 }
 
 .ceo-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 24px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
     margin-bottom: 20px;
     object-fit: cover;
+    border: 8px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.ceo-profile:hover .ceo-image {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(207, 184, 124, 0.3);
+    border-color: rgba(255, 255, 255, 1);
 }
 
 .ceo-name {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
-    color: #4b4343;
+    color: var(--color-text-dark);
     margin-bottom: 8px;
 }
 
 .ceo-title {
     font-size: 18px;
-    color: var(--color-black);
+    color: var(--color-text-medium);
+    padding: 6px 16px;
+    background: var(--color-light);
+    border-radius: 30px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* About Contact Section */
@@ -267,6 +334,8 @@
         var(--color-secondary),
         #aa9664
     );
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-contact-container {
@@ -275,10 +344,12 @@
     padding: 0 20px;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .about-contact-content {
     max-width: 860px;
+    margin: 0 auto;
 }
 
 .about-contact h2 {
@@ -291,187 +362,23 @@
 
 .about-contact p {
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.7;
     margin-bottom: 40px;
     color: var(--color-text-dark);
 }
 
-/* Media Queries */
-@media (max-width: 1100px) {
-    .our-mission-container,
-    .meet-ceo-container,
-    .success-stories-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .our-mission-content,
-    .meet-ceo-content,
-    .success-stories-content {
-        max-width: 100%;
-    }
-
-    .case-studies {
-        height: 700px;
-    }
-
-    .case-study-card {
-        position: relative;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .case-study-card:nth-child(2) {
-        top: 0;
-        left: 0;
-    }
-
-    .contact-form {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        max-width: 500px;
-        margin: 40px auto;
-    }
-
-    .commitment-content {
-        position: relative;
-        top: auto;
-        left: auto;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-
-    .contact-bg {
-        height: 300px;
-    }
-
-    .about-contact-content {
-        max-width: 100%;
-    }
+.cloud-contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-@media (max-width: 768px) {
-    .about-hero h1 {
-        font-size: 48px;
-    }
-
-    .about-hero p {
-        font-size: 24px;
-    }
-
-    .who-we-are h2,
-    .our-mission h2,
-    .meet-ceo h2,
-    .success-stories h2,
-    .commitment-content h2 {
-        font-size: 36px;
-    }
-
-    .who-we-are p,
-    .meet-ceo p,
-    .success-stories p,
-    .commitment-content p {
-        font-size: 18px;
-    }
-
-    .our-mission p {
-        font-size: 16px;
-    }
-
-    .mission-value h3 {
-        font-size: 48px;
-    }
-
-    .ceo-name {
-        font-size: 36px;
-    }
-
-    .ceo-title {
-        font-size: 20px;
-    }
-
-    .ceo-image {
-        width: 200px;
-        height: 200px;
-    }
-
-    .about-hero-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .about-hero-logo {
-        width: 150px;
-        height: 150px;
-    }
-
-    .about-contact h2 {
-        font-size: 36px;
-    }
-
-    .about-contact p {
-        font-size: 18px;
-    }
-
-    .cloud-contact-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-hero h1 {
-        font-size: 36px;
-    }
-
-    .about-hero p {
-        font-size: 20px;
-    }
-
-    .about-section {
-        padding: 40px 20px;
-    }
-
-    .who-we-are,
-    .our-mission,
-    .meet-ceo,
-    .success-stories {
-        padding: 40px 20px;
-    }
-
-    .mission-value h3 {
-        font-size: 36px;
-    }
-
-    .case-study-title {
-        font-size: 24px;
-    }
-
-    .about-hero-logo {
-        width: 120px;
-        height: 120px;
-    }
-
-    .cloud-contact-buttons .btn {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-}
-
-.cta-container h2 {
-    position: relative;
-}
-
-.cta-container h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: var(--color-primary);
-    margin: 20px auto;
+.cloud-contact-buttons .btn {
+    padding: 16px 36px;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* CTA Section styling for "Our Commitment" */
@@ -486,8 +393,24 @@
     margin: 0 auto;
     padding: 60px 40px;
     background-color: var(--color-white);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px var(--color-light-shadow);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-secondary)
+    );
 }
 
 .cta-container h2 {
@@ -503,7 +426,7 @@
     display: block;
     width: 80px;
     height: 4px;
-    background-color: var(--color-primary-light); /* Red underline */
+    background-color: var(--color-primary-light);
     margin: 20px auto;
 }
 
@@ -515,22 +438,133 @@
     color: var(--color-text-medium);
 }
 
+.cta-container .btn {
+    padding: 16px 36px;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(215, 30, 40, 0.1);
+}
+
+.cta-container .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(215, 30, 40, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 1100px) {
+    .our-mission-container,
+    .meet-ceo-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .our-mission-content,
+    .meet-ceo-content {
+        max-width: 100%;
+    }
+
+    .meet-ceo::after {
+        width: 100%;
+        background-image: linear-gradient(
+            to top,
+            rgba(235, 234, 233, 0.8),
+            transparent
+        );
+    }
+}
+
 @media (max-width: 768px) {
-    .cta-container {
+    .about-hero {
+        padding: 60px 20px;
+    }
+
+    .about-hero-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-hero-text {
+        text-align: center;
+    }
+
+    .about-hero h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+    .about-hero p {
+        font-size: 20px;
+        margin: 0 auto;
+    }
+
+    .about-hero-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .who-we-are,
+    .our-mission,
+    .meet-ceo {
         padding: 40px 20px;
     }
 
-    .cta-container h2 {
+    .who-we-are h2,
+    .our-mission h2,
+    .meet-ceo h2,
+    .about-contact h2 {
         font-size: 28px;
     }
 
-    .cta-container p {
+    .our-mission h2::after,
+    .meet-ceo h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .our-mission-content {
+        text-align: center;
+    }
+
+    .our-mission p,
+    .meet-ceo p {
         font-size: 16px;
+    }
+
+    .ceo-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cloud-contact-buttons {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-hero p {
+        font-size: 18px;
+    }
+
+    .about-hero-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .mission-value h3 {
+        font-size: 28px;
+    }
+
     .cta-container {
-        padding: 30px 15px;
+        padding: 40px 20px;
     }
 }
