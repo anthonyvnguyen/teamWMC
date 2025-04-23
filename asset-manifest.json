@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/teamWMC/static/css/main.8c493a82.css",
-    "main.js": "/teamWMC/static/js/main.74587915.js",
+    "main.css": "/teamWMC/static/css/main.02b16b8d.css",
+    "main.js": "/teamWMC/static/js/main.219b4f3c.js",
     "static/js/453.2db569a6.chunk.js": "/teamWMC/static/js/453.2db569a6.chunk.js",
     "static/media/ehrd.png": "/teamWMC/static/media/ehrd.43a993991a9170a3da52.png",
     "static/media/masi.png": "/teamWMC/static/media/masi.eb4cd929f93e9973251f.png",
     "static/media/evsr.png": "/teamWMC/static/media/evsr.66bff2bff5b841256ce3.png",
     "static/media/nnid.png": "/teamWMC/static/media/nnid.44a10190084640821130.png",
-    "static/media/wmc_logo_black.png": "/teamWMC/static/media/wmc_logo_black.dc9b476b81ef4e9a38fd.png",
+    "static/media/wmc_logo.png": "/teamWMC/static/media/wmc_logo.ed285069aed1acba5420.png",
     "static/media/american_flag.jpeg": "/teamWMC/static/media/american_flag.0862eddaa78ca9f44bb4.jpeg",
     "static/media/navi.jpeg": "/teamWMC/static/media/navi.608a6d04e5dd2310b314.jpeg",
-    "static/media/sba_logo.png": "/teamWMC/static/media/sba_logo.bedd7f8ad3bbb509cbb5.png",
-    "static/media/wmc_logo.png": "/teamWMC/static/media/wmc_logo.9f45fff6601f06881708.png",
+    "static/media/sba_logo_white.png": "/teamWMC/static/media/sba_logo_white.12945a157e5d8c2c295e.png",
     "index.html": "/teamWMC/index.html",
-    "main.8c493a82.css.map": "/teamWMC/static/css/main.8c493a82.css.map",
-    "main.74587915.js.map": "/teamWMC/static/js/main.74587915.js.map",
+    "main.02b16b8d.css.map": "/teamWMC/static/css/main.02b16b8d.css.map",
+    "main.219b4f3c.js.map": "/teamWMC/static/js/main.219b4f3c.js.map",
     "453.2db569a6.chunk.js.map": "/teamWMC/static/js/453.2db569a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c493a82.css",
-    "static/js/main.74587915.js"
+    "static/css/main.02b16b8d.css",
+    "static/js/main.219b4f3c.js"
   ]
 }
